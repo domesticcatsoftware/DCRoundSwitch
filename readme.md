@@ -19,7 +19,7 @@ Usage
 
 To use it, add the files in the DCRoundSwitch folder to your project and add the QuartzCore framework to your project.
 
-If you you it in your project, we'd love to hear about it: [mailto:contact@domesticcat.com.au](contact@domesticcat.com.au).
+If you you it in your project, we'd love to hear about it: [contact@domesticcat.com.au](contact@domesticcat.com.au).
 
 Extra features
 --------------
