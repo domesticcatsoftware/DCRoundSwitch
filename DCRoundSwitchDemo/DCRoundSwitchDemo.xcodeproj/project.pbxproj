@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB6FE5D313C420A3006BCDBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D213C420A3006BCDBB /* UIKit.framework */; };
+		AB6FE5D513C420A3006BCDBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D413C420A3006BCDBB /* Foundation.framework */; };
+		AB6FE5D713C420A3006BCDBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */; };
+		AB6FE5DD13C420A3006BCDBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */; };
+		AB6FE5E013C420A3006BCDBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5DF13C420A3006BCDBB /* main.m */; };
+		AB6FE5E313C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */; };
+		AB6FE5E613C420A3006BCDBB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5E413C420A3006BCDBB /* MainWindow.xib */; };
+		AB6FE5E913C420A3006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */; };
+		AB6FE5EC13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */; };
+		AB6FE60313C420D6006BCDBB /* DCRoundSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */; };
+		AB6FE60413C420D6006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FE13C420D6006BCDBB /* DCRoundSwitchKnobLayer.m */; };
+		AB6FE60513C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */; };
+		AB6FE60613C420D6006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */; };
+		AB6FE60913C420DF006BCDBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE60813C420DF006BCDBB /* QuartzCore.framework */; };
+		AB6FE66613C44146006BCDBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5DF13C420A3006BCDBB /* main.m */; };
+		AB6FE66713C44146006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */; };
+		AB6FE66813C44146006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */; };
+		AB6FE66913C44146006BCDBB /* DCRoundSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */; };
+		AB6FE66A13C44146006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FE13C420D6006BCDBB /* DCRoundSwitchKnobLayer.m */; };
+		AB6FE66B13C44146006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */; };
+		AB6FE66C13C44146006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */; };
+		AB6FE67213C44146006BCDBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE60813C420DF006BCDBB /* QuartzCore.framework */; };
+		AB6FE67313C44146006BCDBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D213C420A3006BCDBB /* UIKit.framework */; };
+		AB6FE67413C44146006BCDBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D413C420A3006BCDBB /* Foundation.framework */; };
+		AB6FE67513C44146006BCDBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */; };
+		AB6FE67713C44146006BCDBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */; };
+		AB6FE67813C44146006BCDBB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5E413C420A3006BCDBB /* MainWindow.xib */; };
+		AB6FE67913C44146006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB6FE5CE13C420A3006BCDBB /* DCRoundSwitchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCRoundSwitchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB6FE5D213C420A3006BCDBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB6FE5D413C420A3006BCDBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB6FE5DA13C420A3006BCDBB /* DCRoundSwitchDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCRoundSwitchDemo-Info.plist"; sourceTree = "<group>"; };
+		AB6FE5DC13C420A3006BCDBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB6FE5DE13C420A3006BCDBB /* DCRoundSwitchDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCRoundSwitchDemo-Prefix.pch"; sourceTree = "<group>"; };
+		AB6FE5DF13C420A3006BCDBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB6FE5E113C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchDemoAppDelegate.h; sourceTree = "<group>"; };
+		AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchDemoAppDelegate.m; sourceTree = "<group>"; };
+		AB6FE5E513C420A3006BCDBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		AB6FE5E713C420A3006BCDBB /* DCRoundSwitchDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchDemoViewController.h; sourceTree = "<group>"; };
+		AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchDemoViewController.m; sourceTree = "<group>"; };
+		AB6FE5EB13C420A3006BCDBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DCRoundSwitchDemoViewController.xib; sourceTree = "<group>"; };
+		AB6FE5FB13C420D6006BCDBB /* DCRoundSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitch.h; sourceTree = "<group>"; };
+		AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitch.m; sourceTree = "<group>"; };
+		AB6FE5FD13C420D6006BCDBB /* DCRoundSwitchKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchKnobLayer.h; sourceTree = "<group>"; };
+		AB6FE5FE13C420D6006BCDBB /* DCRoundSwitchKnobLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchKnobLayer.m; sourceTree = "<group>"; };
+		AB6FE5FF13C420D6006BCDBB /* DCRoundSwitchOutlineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchOutlineLayer.h; sourceTree = "<group>"; };
+		AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchOutlineLayer.m; sourceTree = "<group>"; };
+		AB6FE60113C420D6006BCDBB /* DCRoundSwitchToggleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchToggleLayer.h; sourceTree = "<group>"; };
+		AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchToggleLayer.m; sourceTree = "<group>"; };
+		AB6FE60813C420DF006BCDBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AB6FE67D13C44146006BCDBB /* DCRoundSwitchDemo copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DCRoundSwitchDemo copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB6FE5CB13C420A3006BCDBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6FE60913C420DF006BCDBB /* QuartzCore.framework in Frameworks */,
+				AB6FE5D313C420A3006BCDBB /* UIKit.framework in Frameworks */,
+				AB6FE5D513C420A3006BCDBB /* Foundation.framework in Frameworks */,
+				AB6FE5D713C420A3006BCDBB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB6FE67113C44146006BCDBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6FE67213C44146006BCDBB /* QuartzCore.framework in Frameworks */,
+				AB6FE67313C44146006BCDBB /* UIKit.framework in Frameworks */,
+				AB6FE67413C44146006BCDBB /* Foundation.framework in Frameworks */,
+				AB6FE67513C44146006BCDBB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB6FE5C313C420A3006BCDBB = {
+			isa = PBXGroup;
+			children = (
+				AB6FE5D813C420A3006BCDBB /* DCRoundSwitchDemo */,
+				AB6FE5D113C420A3006BCDBB /* Frameworks */,
+				AB6FE5CF13C420A3006BCDBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB6FE5CF13C420A3006BCDBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB6FE5CE13C420A3006BCDBB /* DCRoundSwitchDemo.app */,
+				AB6FE67D13C44146006BCDBB /* DCRoundSwitchDemo copy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB6FE5D113C420A3006BCDBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB6FE5D213C420A3006BCDBB /* UIKit.framework */,
+				AB6FE5D413C420A3006BCDBB /* Foundation.framework */,
+				AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */,
+				AB6FE60813C420DF006BCDBB /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB6FE5D813C420A3006BCDBB /* DCRoundSwitchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				AB6FE5FA13C420D6006BCDBB /* DCRoundSwitch */,
+				AB6FE5E113C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.h */,
+				AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */,
+				AB6FE5E413C420A3006BCDBB /* MainWindow.xib */,
+				AB6FE5E713C420A3006BCDBB /* DCRoundSwitchDemoViewController.h */,
+				AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */,
+				AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */,
+				AB6FE5D913C420A3006BCDBB /* Supporting Files */,
+			);
+			path = DCRoundSwitchDemo;
+			sourceTree = "<group>";
+		};
+		AB6FE5D913C420A3006BCDBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB6FE5DA13C420A3006BCDBB /* DCRoundSwitchDemo-Info.plist */,
+				AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */,
+				AB6FE5DE13C420A3006BCDBB /* DCRoundSwitchDemo-Prefix.pch */,
+				AB6FE5DF13C420A3006BCDBB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB6FE5FA13C420D6006BCDBB /* DCRoundSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				AB6FE5FB13C420D6006BCDBB /* DCRoundSwitch.h */,
+				AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */,
+				AB6FE5FD13C420D6006BCDBB /* DCRoundSwitchKnobLayer.h */,
+				AB6FE5FE13C420D6006BCDBB /* DCRoundSwitchKnobLayer.m */,
+				AB6FE5FF13C420D6006BCDBB /* DCRoundSwitchOutlineLayer.h */,
+				AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */,
+				AB6FE60113C420D6006BCDBB /* DCRoundSwitchToggleLayer.h */,
+				AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */,
+			);
+			name = DCRoundSwitch;
+			path = ../../DCRoundSwitch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB6FE5CD13C420A3006BCDBB /* DCRoundSwitchDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB6FE5EF13C420A3006BCDBB /* Build configuration list for PBXNativeTarget "DCRoundSwitchDemo" */;
+			buildPhases = (
+				AB6FE5CA13C420A3006BCDBB /* Sources */,
+				AB6FE5CB13C420A3006BCDBB /* Frameworks */,
+				AB6FE5CC13C420A3006BCDBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DCRoundSwitchDemo;
+			productName = DCRoundSwitchDemo;
+			productReference = AB6FE5CE13C420A3006BCDBB /* DCRoundSwitchDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB6FE66413C44146006BCDBB /* DCRoundSwitchDemo copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB6FE67A13C44146006BCDBB /* Build configuration list for PBXNativeTarget "DCRoundSwitchDemo copy" */;
+			buildPhases = (
+				AB6FE66513C44146006BCDBB /* Sources */,
+				AB6FE67113C44146006BCDBB /* Frameworks */,
+				AB6FE67613C44146006BCDBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DCRoundSwitchDemo copy";
+			productName = DCRoundSwitchDemo;
+			productReference = AB6FE67D13C44146006BCDBB /* DCRoundSwitchDemo copy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB6FE5C513C420A3006BCDBB /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = AB6FE5C813C420A3006BCDBB /* Build configuration list for PBXProject "DCRoundSwitchDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB6FE5C313C420A3006BCDBB;
+			productRefGroup = AB6FE5CF13C420A3006BCDBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB6FE5CD13C420A3006BCDBB /* DCRoundSwitchDemo */,
+				AB6FE66413C44146006BCDBB /* DCRoundSwitchDemo copy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB6FE5CC13C420A3006BCDBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6FE5DD13C420A3006BCDBB /* InfoPlist.strings in Resources */,
+				AB6FE5E613C420A3006BCDBB /* MainWindow.xib in Resources */,
+				AB6FE5EC13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB6FE67613C44146006BCDBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6FE67713C44146006BCDBB /* InfoPlist.strings in Resources */,
+				AB6FE67813C44146006BCDBB /* MainWindow.xib in Resources */,
+				AB6FE67913C44146006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB6FE5CA13C420A3006BCDBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6FE5E013C420A3006BCDBB /* main.m in Sources */,
+				AB6FE5E313C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */,
+				AB6FE5E913C420A3006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */,
+				AB6FE60313C420D6006BCDBB /* DCRoundSwitch.m in Sources */,
+				AB6FE60413C420D6006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */,
+				AB6FE60513C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */,
+				AB6FE60613C420D6006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB6FE66513C44146006BCDBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6FE66613C44146006BCDBB /* main.m in Sources */,
+				AB6FE66713C44146006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */,
+				AB6FE66813C44146006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */,
+				AB6FE66913C44146006BCDBB /* DCRoundSwitch.m in Sources */,
+				AB6FE66A13C44146006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */,
+				AB6FE66B13C44146006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */,
+				AB6FE66C13C44146006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB6FE5DC13C420A3006BCDBB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AB6FE5E413C420A3006BCDBB /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB6FE5E513C420A3006BCDBB /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB6FE5EB13C420A3006BCDBB /* en */,
+			);
+			name = DCRoundSwitchDemoViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB6FE5ED13C420A3006BCDBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB6FE5EE13C420A3006BCDBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		AB6FE5F013C420A3006BCDBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB6FE5F113C420A3006BCDBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AB6FE67B13C44146006BCDBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
+				PRODUCT_NAME = "DCRoundSwitchDemo copy";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB6FE67C13C44146006BCDBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
+				PRODUCT_NAME = "DCRoundSwitchDemo copy";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB6FE5C813C420A3006BCDBB /* Build configuration list for PBXProject "DCRoundSwitchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB6FE5ED13C420A3006BCDBB /* Debug */,
+				AB6FE5EE13C420A3006BCDBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB6FE5EF13C420A3006BCDBB /* Build configuration list for PBXNativeTarget "DCRoundSwitchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB6FE5F013C420A3006BCDBB /* Debug */,
+				AB6FE5F113C420A3006BCDBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB6FE67A13C44146006BCDBB /* Build configuration list for PBXNativeTarget "DCRoundSwitchDemo copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB6FE67B13C44146006BCDBB /* Debug */,
+				AB6FE67C13C44146006BCDBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB6FE5C513C420A3006BCDBB /* Project object */;
+}
