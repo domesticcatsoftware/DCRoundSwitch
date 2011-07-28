@@ -12,7 +12,6 @@
 
 #import "DCRoundSwitchDemoAppDelegate.h"
 #import "DCRoundSwitchDemoViewController.h"
-#import "DCIntrospect.h"
 
 @implementation DCRoundSwitchDemoAppDelegate
 @synthesize window, viewController;
@@ -27,10 +26,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#ifdef DEBUG
-	[[DCIntrospect sharedIntrospector] start];
-#endif
-
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
 	return YES;
