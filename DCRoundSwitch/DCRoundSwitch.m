@@ -287,6 +287,11 @@
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated
 {
+	[self setOn:newOn animated:animated ignoreControlEvents:NO];
+}
+
+- (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents
+{
 	BOOL previousOn = self.on;
 	on = newOn;
 	ignoreTap = YES;
@@ -339,7 +344,7 @@
 			ignoreTap = NO;
 
 			// send the action here so it get's sent at the end of the animations
-			if (previousOn != on)
+			if (previousOn != on && !ignoreControlEvents)
 				[self sendActionsForControlEvents:UIControlEventValueChanged];
 		}];
 
