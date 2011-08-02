@@ -104,7 +104,7 @@
 	// this is the knob, and sits on top of the layer stack. note that the knob shadow is NOT drawn here, it is drawn on the
 	// toggleLayer so it doesn't bleed out over the outlineLayer.
 
-	toggleLayer = [[DCRoundSwitchToggleLayer alloc] initWithOnString:@"ON" offString:@"OFF" onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]];
+	toggleLayer = [[DCRoundSwitchToggleLayer alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]];
 	toggleLayer.drawOnTint = NO;
 	toggleLayer.clip = YES;
 	[self.layer addSublayer:toggleLayer];
