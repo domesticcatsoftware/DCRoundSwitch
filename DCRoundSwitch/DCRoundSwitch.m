@@ -139,11 +139,29 @@
 
 #pragma mark -
 #pragma mark Setup Frame/Layout
-
 - (void)sizeToFit
 {
 	[super sizeToFit];
-
+	
+	/*
+	 NSString *onString = onText.text;
+	 NSString *offString = offText.text;
+	 
+	 CGFloat width = [onString sizeWithFont:onText.font].width;
+	 CGFloat offWidth = [offString sizeWithFont:offText.font].width;
+	 
+	 if(offWidth > width)
+	 width = offWidth;
+	 
+	 width += [self nonTextWidth];
+	 
+	 CGRect existingFrame = self.frame;
+	 CGFloat currentWidth = existingFrame.size.width;
+	 existingFrame.size.width = width;
+	 existingFrame.origin.x += currentWidth - width;
+	 [self setFrame:existingFrame];
+	 [self regenerateImages];*/
+	
 	CGRect newFrame = self.frame;
 	newFrame.size.width = 77.0;
 	newFrame.size.height = 27.0;
@@ -192,7 +210,6 @@
 
 #pragma mark -
 #pragma mark Interaction
-
 - (void)tapped:(UITapGestureRecognizer *)gesture
 {
 	if (ignoreTap) return;
