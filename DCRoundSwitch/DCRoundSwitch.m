@@ -143,29 +143,26 @@
 {
 	[super sizeToFit];
 	
-	/*
-	 NSString *onString = onText.text;
-	 NSString *offString = offText.text;
-	 
-	 CGFloat width = [onString sizeWithFont:onText.font].width;
-	 CGFloat offWidth = [offString sizeWithFont:offText.font].width;
-	 
-	 if(offWidth > width)
-	 width = offWidth;
-	 
-	 width += [self nonTextWidth];
-	 
-	 CGRect existingFrame = self.frame;
-	 CGFloat currentWidth = existingFrame.size.width;
-	 existingFrame.size.width = width;
-	 existingFrame.origin.x += currentWidth - width;
-	 [self setFrame:existingFrame];
-	 [self regenerateImages];*/
+	NSString *onString = toggleLayer.onString;
+	NSString *offString = toggleLayer.offString;
+	
+	CGFloat width = [onString sizeWithFont:toggleLayer.labelFont].width;
+	CGFloat offWidth = [offString sizeWithFont:toggleLayer.labelFont].width;
+	
+	if(offWidth > width)
+		width = offWidth;
+	
+	width += toggleLayer.bounds.size.width * 2.;//add 2x the knob for padding
 	
 	CGRect newFrame = self.frame;
-	newFrame.size.width = 77.0;
-	newFrame.size.height = 27.0;
+	CGFloat currentWidth = newFrame.size.width;
+	newFrame.size.width = width;
+	newFrame.origin.x += currentWidth - width;
 	self.frame = newFrame;
+
+	//old values for sizeToFit; keep these around for reference
+//	newFrame.size.width = 77.0;
+//	newFrame.size.height = 27.0;
 }
 
 - (void)useLayerMasking
