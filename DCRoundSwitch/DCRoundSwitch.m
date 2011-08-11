@@ -43,7 +43,7 @@
 {
 	if ((self = [super init]))
 	{
-		[self sizeToFit];
+		self.frame = CGRectMake(0, 0, 77, 27);
 		[self setup];
 	}
 
@@ -145,7 +145,7 @@
 	
 	NSString *onString = toggleLayer.onString;
 	NSString *offString = toggleLayer.offString;
-	
+
 	CGFloat width = [onString sizeWithFont:toggleLayer.labelFont].width;
 	CGFloat offWidth = [offString sizeWithFont:toggleLayer.labelFont].width;
 	
