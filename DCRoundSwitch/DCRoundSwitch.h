@@ -28,8 +28,8 @@
 
 @property (nonatomic, retain) UIColor *onTintColor;		// default: blue (matches normal UISwitch)
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
-@property (nonatomic, copy) NSString *onText;			// default: 'ON' - not automatically localized!
-@property (nonatomic, copy) NSString *offText;			// default: 'OFF' - not automatically localized!
+@property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
+@property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated;
 
