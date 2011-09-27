@@ -54,6 +54,7 @@ CGGradientRef GradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef start
 	CGColorRef colors[] = {startColor, endColor};
 	CFArrayRef colorsArray = CFArrayCreate(NULL, (const void**)colors, sizeof(colors) / sizeof(CGColorRef), &kCFTypeArrayCallBacks);
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, colorsArray, colorStops);
+	[NSMakeCollectable(gradient) autorelease];
 	CFRelease(colorsArray);
 	return gradient;
 }
