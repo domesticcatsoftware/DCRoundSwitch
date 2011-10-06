@@ -11,7 +11,7 @@
 
 #import "DCRoundSwitchKnobLayer.h"
 
-CGGradientRef GradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef startColor, CGColorRef endColor);
+CGGradientRef CreateGradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef startColor, CGColorRef endColor);
 
 @implementation DCRoundSwitchKnobLayer
 @synthesize gripped;
@@ -35,20 +35,22 @@ CGGradientRef GradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef start
 	CGColorRef knobEndColor = (self.gripped) ? [UIColor colorWithWhite:0.894 alpha:1.0].CGColor : [UIColor colorWithWhite:0.996 alpha:1.0].CGColor;
 	CGPoint topPoint = CGPointMake(0, 0);
 	CGPoint bottomPoint = CGPointMake(0, knobRadius + 2);
-	CGGradientRef knobGradient = GradientRefWithColors(colorSpace, knobStartColor, knobEndColor);
+	CGGradientRef knobGradient = CreateGradientRefWithColors(colorSpace, knobStartColor, knobEndColor);
 	CGContextDrawLinearGradient(context, knobGradient, topPoint, bottomPoint, 0);
+	CGGradientRelease(knobGradient);
 
 	// knob inner highlight
 	CGContextAddEllipseInRect(context, CGRectInset(knobRect, 0.5, 0.5));
 	CGContextAddEllipseInRect(context, CGRectInset(knobRect, 1.5, 1.5));
 	CGContextEOClip(context);
-	CGGradientRef knobHighlightGradient = GradientRefWithColors(colorSpace, [UIColor whiteColor].CGColor, [UIColor colorWithWhite:1.0 alpha:0.5].CGColor);
+	CGGradientRef knobHighlightGradient = CreateGradientRefWithColors(colorSpace, [UIColor whiteColor].CGColor, [UIColor colorWithWhite:1.0 alpha:0.5].CGColor);
 	CGContextDrawLinearGradient(context, knobHighlightGradient, topPoint, bottomPoint, 0);
+	CGGradientRelease(knobHighlightGradient);
 
 	CGColorSpaceRelease(colorSpace);
 }
 
-CGGradientRef GradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef startColor, CGColorRef endColor)
+CGGradientRef CreateGradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef startColor, CGColorRef endColor)
 {
 	CGFloat colorStops[2] = {0.0, 1.0};
 	CGColorRef colors[] = {startColor, endColor};

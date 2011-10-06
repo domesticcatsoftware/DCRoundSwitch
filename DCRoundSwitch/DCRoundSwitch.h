@@ -32,5 +32,6 @@
 @property (nonatomic, copy) NSString *offText;			// default: 'OFF' - not automatically localized!
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated;
+- (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents;
 
 @end
