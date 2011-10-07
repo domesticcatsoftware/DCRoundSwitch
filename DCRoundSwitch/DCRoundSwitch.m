@@ -43,7 +43,7 @@
 {
 	if ((self = [super init]))
 	{
-		[self sizeToFit];
+		self.frame = CGRectMake(0, 0, 77, 27);
 		[self setup];
 	}
 
@@ -140,15 +140,30 @@
 
 #pragma mark -
 #pragma mark Setup Frame/Layout
-
 - (void)sizeToFit
 {
 	[super sizeToFit];
+	
+	NSString *onString = toggleLayer.onString;
+	NSString *offString = toggleLayer.offString;
 
+	CGFloat width = [onString sizeWithFont:toggleLayer.labelFont].width;
+	CGFloat offWidth = [offString sizeWithFont:toggleLayer.labelFont].width;
+	
+	if(offWidth > width)
+		width = offWidth;
+	
+	width += toggleLayer.bounds.size.width * 2.;//add 2x the knob for padding
+	
 	CGRect newFrame = self.frame;
-	newFrame.size.width = 77.0;
-	newFrame.size.height = 27.0;
+	CGFloat currentWidth = newFrame.size.width;
+	newFrame.size.width = width;
+	newFrame.origin.x += currentWidth - width;
 	self.frame = newFrame;
+
+	//old values for sizeToFit; keep these around for reference
+//	newFrame.size.width = 77.0;
+//	newFrame.size.height = 27.0;
 }
 
 - (void)useLayerMasking
@@ -193,7 +208,6 @@
 
 #pragma mark -
 #pragma mark Interaction
-
 - (void)tapped:(UITapGestureRecognizer *)gesture
 {
 	if (ignoreTap) return;
@@ -288,6 +302,11 @@
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated
 {
+	[self setOn:newOn animated:animated ignoreControlEvents:NO];
+}
+
+- (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents
+{
 	BOOL previousOn = self.on;
 	on = newOn;
 	ignoreTap = YES;
@@ -340,7 +359,7 @@
 			ignoreTap = NO;
 
 			// send the action here so it get's sent at the end of the animations
-			if (previousOn != on)
+			if (previousOn != on && !ignoreControlEvents)
 				[self sendActionsForControlEvents:UIControlEventValueChanged];
 		}];
 
