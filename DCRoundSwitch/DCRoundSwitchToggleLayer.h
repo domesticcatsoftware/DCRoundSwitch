@@ -17,10 +17,13 @@
 @property (nonatomic, retain) UIColor *onTintColor;
 @property (nonatomic, retain) NSString *onString;
 @property (nonatomic, retain) NSString *offString;
+@property (nonatomic, retain) UIImage *onImage;
+@property (nonatomic, retain) UIImage *offImage;
 @property (nonatomic, readonly) UIFont *labelFont;
 @property (nonatomic) BOOL drawOnTint;
 @property (nonatomic) BOOL clip;
 
 - (id)initWithOnString:(NSString *)anOnString offString:(NSString *)anOffString onTintColor:(UIColor *)anOnTintColor;
+- (id)initWithOnImage:(UIImage *)anOnImage offImage:(UIImage *)anOffImage onTintColor:(UIColor *)anOnTintColor;
 
 @end

@@ -30,6 +30,8 @@
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
 @property (nonatomic, copy) NSString *onText;			// default: 'ON' - not automatically localized!
 @property (nonatomic, copy) NSString *offText;			// default: 'OFF' - not automatically localized!
+@property (nonatomic, copy) UIImage *onImage;
+@property (nonatomic, copy) UIImage *offImage;
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated;
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents;

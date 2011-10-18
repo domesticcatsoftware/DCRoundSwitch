@@ -24,7 +24,7 @@
 @end
 
 @implementation DCRoundSwitch
-@synthesize on, onText, offText;
+@synthesize on, onText, offText, onImage, offImage;
 @synthesize onTintColor;
 
 #pragma mark -
@@ -35,6 +35,8 @@
 	[onTintColor release];
 	[onText release];
 	[offText release];
+	[onImage release];
+	[offImage release];
 
 	[super dealloc];
 }
@@ -425,6 +427,28 @@
 		toggleLayer.offString = offText;
 		[toggleLayer setNeedsDisplay];
 	}
+}
+
+- (void)setOnImage:(UIImage *)newOnImage 
+{
+    if (newOnImage != onImage)
+    {
+        [onImage release];
+        onImage = [newOnImage copy];
+        toggleLayer.onImage = onImage;
+        [toggleLayer setNeedsDisplay];
+    }
+}
+
+- (void)setOffImage:(UIImage *)newOffImage 
+{
+    if (newOffImage != offImage)
+    {
+        [offImage release];
+        offImage = [newOffImage copy];
+        toggleLayer.offImage = offImage;
+        [toggleLayer setNeedsDisplay];
+    }
 }
 
 @end
