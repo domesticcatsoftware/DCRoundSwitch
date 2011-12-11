@@ -1,4 +1,4 @@
-DVRoundSwitch
+DCRoundSwitch
 ============
 
 This is a fork of [DCRoundSwitch @ domesticcatsoftware](https://github.com/domesticcatsoftware/DCRoundSwitch)
