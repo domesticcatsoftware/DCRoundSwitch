@@ -53,11 +53,11 @@ CGGradientRef CreateGradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef
 CGGradientRef CreateGradientRefWithColors(CGColorSpaceRef colorSpace, CGColorRef startColor, CGColorRef endColor)
 {
 	CGFloat colorStops[2] = {0.0, 1.0};
-	CGColorRef colors[] = {startColor, endColor};
-	CFArrayRef colorsArray = CFArrayCreate(NULL, (const void**)colors, sizeof(colors) / sizeof(CGColorRef), &kCFTypeArrayCallBacks);
-	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, colorsArray, colorStops);
-	CFRelease(colorsArray);
-	return gradient;
+    NSArray *colors = [NSArray arrayWithObjects:(id)startColor, (id)endColor, nil];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)colors, colorStops);
+    
+    return gradient;
 }
 
 - (void)setGripped:(BOOL)newGripped
