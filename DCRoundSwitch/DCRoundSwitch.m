@@ -84,8 +84,9 @@
 		self.autoresizingMask ^= UIViewAutoresizingFlexibleWidth;
 
 	// setup default texts
-	self.onText = NSLocalizedString(@"ON", @"Used inside switches");
-	self.offText = NSLocalizedString(@"OFF", @"Used inside switches");
+	NSBundle *uiKitBundle = [NSBundle bundleWithIdentifier:@"com.apple.UIKit"];
+	self.onText = uiKitBundle ? [uiKitBundle localizedStringForKey:@"ON" value:nil table:nil] : @"ON";
+	self.offText = uiKitBundle ? [uiKitBundle localizedStringForKey:@"OFF" value:nil table:nil] : @"OFF";
 
 	// the switch has three layers, (ordered from bottom to top):
 	//

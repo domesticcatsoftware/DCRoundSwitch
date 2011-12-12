@@ -53,8 +53,8 @@
 	self.fatSwitch.onText = @"1";
 	self.fatSwitch.offText = @"0";
 
-	self.longSwitch.onText = @"CUSTOM TEXT ON";
-	self.longSwitch.offText = @"CUSTOM TEXT OFF";
+	self.longSwitch.onText = NSLocalizedString(@"CUSTOM TEXT ON", @"");
+	self.longSwitch.offText = NSLocalizedString(@"CUSTOM TEXT OFF", @"");
 	self.longSwitch.on = YES;
 }
 
