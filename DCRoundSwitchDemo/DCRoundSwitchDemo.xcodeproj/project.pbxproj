@@ -23,7 +23,6 @@
 		DA7A60B613FEA495000F7F8D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60B713FEA495000F7F8D /* MainWindow.xib */; };
 		DA7A60B813FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */; };
 		DA7A60BC13FEA655000F7F8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60BA13FEA654000F7F8D /* Localizable.strings */; };
-		DA7A60BE13FEA65A000F7F8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60BA13FEA654000F7F8D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +170,9 @@
 /* Begin PBXProject section */
 		AB6FE5C513C420A3006BCDBB /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
 			buildConfigurationList = AB6FE5C813C420A3006BCDBB /* Build configuration list for PBXProject "DCRoundSwitchDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -197,7 +199,6 @@
 				DA7A60B613FEA495000F7F8D /* MainWindow.xib in Resources */,
 				DA7A60B813FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib in Resources */,
 				DA7A60BC13FEA655000F7F8D /* Localizable.strings in Resources */,
-				DA7A60BE13FEA65A000F7F8D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +276,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -289,6 +291,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
