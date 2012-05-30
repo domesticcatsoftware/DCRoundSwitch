@@ -417,10 +417,8 @@
 	}
 }
 
-- (void)setFrame:(CGRect)aFrame
+- (void)layoutSubviews;
 {
-	[super setFrame:aFrame];
-
 	CGFloat knobRadius = self.bounds.size.height + 2.0;
 	self.knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
 	CGSize toggleSize = CGSizeMake(self.bounds.size.width * 2 - (knobRadius - 4), self.bounds.size.height);
