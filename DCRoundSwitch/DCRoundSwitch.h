@@ -31,6 +31,10 @@
 @property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
 @property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized
 
++ (Class)knobLayerClass;
++ (Class)outlineLayerClass;
++ (Class)toggleLayerClass;
+
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated;
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents;
 

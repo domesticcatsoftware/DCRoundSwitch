@@ -18,6 +18,8 @@
 		AB6FE60513C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */; };
 		AB6FE60613C420D6006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */; };
 		AB6FE60913C420DF006BCDBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE60813C420DF006BCDBB /* QuartzCore.framework */; };
+		B5FFD9C815762AC60085F0FA /* TestSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FFD9C715762AC60085F0FA /* TestSwitch.m */; };
+		B5FFD9CC15762AFC0085F0FA /* TestSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FFD9CB15762AFC0085F0FA /* TestSwitchKnobLayer.m */; };
 		DA7A60B613FEA495000F7F8D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60B713FEA495000F7F8D /* MainWindow.xib */; };
 		DA7A60B813FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */; };
 		DA7A60BC13FEA655000F7F8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60BA13FEA654000F7F8D /* Localizable.strings */; };
@@ -45,6 +47,10 @@
 		AB6FE60113C420D6006BCDBB /* DCRoundSwitchToggleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchToggleLayer.h; sourceTree = "<group>"; };
 		AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchToggleLayer.m; sourceTree = "<group>"; };
 		AB6FE60813C420DF006BCDBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5FFD9C615762AC60085F0FA /* TestSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSwitch.h; sourceTree = "<group>"; };
+		B5FFD9C715762AC60085F0FA /* TestSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSwitch.m; sourceTree = "<group>"; };
+		B5FFD9CA15762AFC0085F0FA /* TestSwitchKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSwitchKnobLayer.h; sourceTree = "<group>"; };
+		B5FFD9CB15762AFC0085F0FA /* TestSwitchKnobLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSwitchKnobLayer.m; sourceTree = "<group>"; };
 		DA7A60B713FEA495000F7F8D /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCRoundSwitchDemoViewController.xib; sourceTree = "<group>"; };
 		DA7A60BB13FEA655000F7F8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -104,6 +110,10 @@
 				AB6FE5E713C420A3006BCDBB /* DCRoundSwitchDemoViewController.h */,
 				AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */,
 				DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */,
+				B5FFD9C615762AC60085F0FA /* TestSwitch.h */,
+				B5FFD9C715762AC60085F0FA /* TestSwitch.m */,
+				B5FFD9CA15762AFC0085F0FA /* TestSwitchKnobLayer.h */,
+				B5FFD9CB15762AFC0085F0FA /* TestSwitchKnobLayer.m */,
 				DA7A60BA13FEA654000F7F8D /* Localizable.strings */,
 				AB6FE5D913C420A3006BCDBB /* Supporting Files */,
 			);
@@ -205,6 +215,8 @@
 				AB6FE60413C420D6006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */,
 				AB6FE60513C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */,
 				AB6FE60613C420D6006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */,
+				B5FFD9C815762AC60085F0FA /* TestSwitch.m in Sources */,
+				B5FFD9CC15762AFC0085F0FA /* TestSwitchKnobLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
