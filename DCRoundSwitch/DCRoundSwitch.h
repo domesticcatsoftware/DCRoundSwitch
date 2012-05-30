@@ -17,14 +17,6 @@
 @class DCRoundSwitchKnobLayer;
 
 @interface DCRoundSwitch : UIControl
-{
-	@private
-		DCRoundSwitchOutlineLayer *outlineLayer;
-		DCRoundSwitchToggleLayer *toggleLayer;
-		DCRoundSwitchKnobLayer *knobLayer;
-		CAShapeLayer *clipLayer;
-		BOOL ignoreTap;
-}
 
 @property (nonatomic, retain) UIColor *onTintColor;		// default: blue (matches normal UISwitch)
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
