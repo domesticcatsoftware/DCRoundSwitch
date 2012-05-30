@@ -14,7 +14,7 @@
 #import "DCRoundSwitchOutlineLayer.h"
 #import "DCRoundSwitchKnobLayer.h"
 
-@interface DCRoundSwitch ()
+@interface DCRoundSwitch () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, retain) DCRoundSwitchOutlineLayer *outlineLayer;
 @property (nonatomic, retain) DCRoundSwitchToggleLayer *toggleLayer;
@@ -148,14 +148,15 @@
 	// tap gesture for toggling the switch
 	UITapGestureRecognizer *tapGestureRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self 
 																						   action:@selector(tapped:)] autorelease];
+	[tapGestureRecognizer setDelegate:self];
 	[self addGestureRecognizer:tapGestureRecognizer];
 
 	// pan gesture for moving the switch knob manually
-	UIPanGestureRecognizer *panGesture = [[[UIPanGestureRecognizer alloc] initWithTarget:self 
+	UIPanGestureRecognizer *panGestureRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self
 																				 action:@selector(toggleDragged:)] autorelease];
-	[self addGestureRecognizer:panGesture];
+	[panGestureRecognizer setDelegate:self];
+	[self addGestureRecognizer:panGestureRecognizer];
 
-	// call setFrame: manually so the initial layout can be done
 	[self setNeedsLayout];
 
 	// setup the layer positions
@@ -164,6 +165,7 @@
 
 #pragma mark -
 #pragma mark Setup Frame/Layout
+
 - (void)sizeToFit
 {
 	[super sizeToFit];
@@ -316,6 +318,13 @@
 	[super touchesCancelled:touches withEvent:event];
 
 	[self sendActionsForControlEvents:UIControlEventTouchUpOutside];
+}
+
+#pragma mark UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer;
+{
+	return !self.ignoreTap;
 }
 
 #pragma mark Setters/Getters
