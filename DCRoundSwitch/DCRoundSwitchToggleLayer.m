@@ -15,7 +15,7 @@
 @synthesize onString, offString, onTintColor;
 @synthesize drawOnTint;
 @synthesize clip;
-@synthesize labelFont;
+@synthesize labelFont, labelColor, labelShadowColor;
 
 - (void)dealloc
 {
@@ -40,7 +40,10 @@
 
 - (UIFont *)labelFont
 {
-	return [UIFont boldSystemFontOfSize:ceilf(self.bounds.size.height * .6)];
+	if (labelFont != nil)
+		return labelFont;
+	else
+		return [UIFont boldSystemFontOfSize:ceilf(self.bounds.size.height * .6)];
 }
 
 - (void)drawInContext:(CGContextRef)context
@@ -83,17 +86,29 @@
 	// 'ON' state label (self.onString)
 	CGSize onTextSize = [self.onString sizeWithFont:self.labelFont];
 	CGPoint onTextPoint = CGPointMake((textSpaceWidth - onTextSize.width) / 2.0 + knobRadius * .15, floorf((self.bounds.size.height - onTextSize.height) / 2.0) + 1.0);
-	[[UIColor colorWithWhite:0.45 alpha:1.0] set]; // .2 & .4
+	if (labelShadowColor)
+		[labelShadowColor set];
+	else
+		[[UIColor colorWithWhite:0.45 alpha:1.0] set]; // .2 & .4
 	[self.onString drawAtPoint:CGPointMake(onTextPoint.x, onTextPoint.y - 1.0) withFont:self.labelFont];
-	[[UIColor whiteColor] set];
+	if (labelColor)
+		[labelColor set];
+	else
+		[[UIColor whiteColor] set];
 	[self.onString drawAtPoint:onTextPoint withFont:self.labelFont];
 
 	// 'OFF' state label (self.offString)
 	CGSize offTextSize = [self.offString sizeWithFont:self.labelFont];
 	CGPoint offTextPoint = CGPointMake(textSpaceWidth + (textSpaceWidth - offTextSize.width) / 2.0 + knobRadius * .86, floorf((self.bounds.size.height - offTextSize.height) / 2.0) + 1.0);
-	[[UIColor whiteColor] set];
+	if (labelShadowColor)
+		[labelShadowColor set];
+	else
+		[[UIColor whiteColor] set];
 	[self.offString drawAtPoint:CGPointMake(offTextPoint.x, offTextPoint.y + 1.0) withFont:self.labelFont];
-	[[UIColor colorWithWhite:0.52 alpha:1.0] set];
+	if (labelColor)
+		[labelColor set];
+	else
+		[[UIColor colorWithWhite:0.52 alpha:1.0] set];
 	[self.offString drawAtPoint:offTextPoint withFont:self.labelFont];
 
 	UIGraphicsPopContext();

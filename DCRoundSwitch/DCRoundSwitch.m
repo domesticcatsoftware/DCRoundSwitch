@@ -33,6 +33,7 @@
 @synthesize outlineLayer, toggleLayer, knobLayer, clipLayer, ignoreTap;
 @synthesize on, onText, offText;
 @synthesize onTintColor;
+@synthesize labelFont, labelColor, labelShadowColor;
 
 #pragma mark -
 #pragma mark Init & Memory Managment
@@ -463,6 +464,39 @@
 		self.toggleLayer.offString = offText;
 		[self.toggleLayer setNeedsDisplay];
 	}
+}
+
+- (void)setLabelFont:(UIFont *)newLabelFont
+{
+	if (newLabelFont != labelFont)
+	{
+		[labelFont release];
+		labelFont = [newLabelFont retain];
+		self.toggleLayer.labelFont = labelFont;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
+- (void)setLabelColor:(UIColor *)newLabelColor
+{
+	if (newLabelColor != labelColor)
+	{
+		[labelColor release];
+		labelColor = [newLabelColor retain];
+		self.toggleLayer.labelColor = labelColor;
+		[self.toggleLayer setNeedsDisplay];
+	}	
+}
+
+- (void)setLabelShadowColor:(UIColor *)newLabelShadowColor
+{
+	if (newLabelShadowColor != labelShadowColor)
+	{
+		[labelShadowColor release];
+		labelShadowColor = [newLabelShadowColor retain];
+		self.toggleLayer.labelShadowColor = labelShadowColor;
+		[self.toggleLayer setNeedsDisplay];
+	}	
 }
 
 @end
