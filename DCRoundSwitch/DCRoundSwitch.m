@@ -45,6 +45,7 @@
 	[clipLayer release];
 
 	[onTintColor release];
+	[offTintColor release];
 	[onText release];
 	[offText release];
 

@@ -22,7 +22,8 @@
 	[onString release];
 	[offString release];
 	[onTintColor release];
-
+	[offTintColor release];
+	
 	[super dealloc];
 }
 
