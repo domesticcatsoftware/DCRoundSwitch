@@ -22,6 +22,9 @@
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
 @property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
 @property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized
+@property (nonatomic, retain) UIFont *labelFont;
+@property (nonatomic, retain) UIColor *labelColor;
+@property (nonatomic, retain) UIColor *labelShadowColor;
 
 + (Class)knobLayerClass;
 + (Class)outlineLayerClass;
