@@ -48,6 +48,10 @@
 	[onTintColor release];
 	[onText release];
 	[offText release];
+	
+	[labelFont release];
+	[labelColor release];
+	[labelShadowColor release];
 
 	[super dealloc];
 }
