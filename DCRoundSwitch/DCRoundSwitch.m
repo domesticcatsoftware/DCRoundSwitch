@@ -432,7 +432,7 @@
 - (void)layoutSubviews;
 {
 	CGFloat knobRadius = self.bounds.size.height + 2.0;
-	self.knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
+	self.knobLayer.frame = CGRectMake(0, 0, knobRadius - 2.0, knobRadius);
 	CGSize toggleSize = CGSizeMake(self.bounds.size.width * 2 - (knobRadius - 4), self.bounds.size.height);
 	CGFloat minToggleX = -toggleSize.width / 2.0 + knobRadius / 2.0 - 1;
 	CGFloat maxToggleX = -1;
