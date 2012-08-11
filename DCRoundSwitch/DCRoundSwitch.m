@@ -417,7 +417,7 @@
 	}
 }
 
-- (void)layoutSubviews;
+- (void)layoutSubviews
 {
 	CGFloat knobRadius = self.bounds.size.height + 2.0;
 	self.knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
