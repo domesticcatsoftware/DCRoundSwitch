@@ -333,6 +333,11 @@
 
 #pragma mark Setters/Getters
 
+-(void)setEnabled:(BOOL)aenabled {
+    [super setEnabled:aenabled];
+    [self.toggleLayer setEnabled:aenabled];
+}
+
 - (void)setOn:(BOOL)newOn
 {
 	[self setOn:newOn animated:NO];

@@ -43,6 +43,13 @@
 	return [UIFont boldSystemFontOfSize:ceilf(self.bounds.size.height * .6)];
 }
 
+-(void)setEnabled:(BOOL)aenabled {
+    if(aenabled)
+        self.opacity = 1.0;
+    else
+        self.opacity = 0.65;
+}
+
 - (void)drawInContext:(CGContextRef)context
 {
 	CGFloat knobRadius = self.bounds.size.height - 2.0;
