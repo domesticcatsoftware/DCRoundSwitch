@@ -132,6 +132,10 @@
 	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]] autorelease];
 	self.toggleLayer.drawOnTint = NO;
 	self.toggleLayer.clip = YES;
+    if( self.toggleLayer.bounds.size.height == 0 )
+    {
+        self.toggleLayer.frame = CGRectMake( 0, 0, self.bounds.size.height, self.bounds.size.height);
+    }
 	[self.layer addSublayer:self.toggleLayer];
 	[self.toggleLayer setNeedsDisplay];
 
