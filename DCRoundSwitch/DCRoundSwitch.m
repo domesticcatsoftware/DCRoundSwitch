@@ -445,10 +445,11 @@
 
 - (void)setOnText:(NSString *)newOnText
 {
-	if (newOnText != onText)
+	if ( ![newOnText isEqualToString:onText] )
 	{
 		[onText release];
 		onText = [newOnText copy];
+        [self sizeToFit];
 		self.toggleLayer.onString = onText;
 		[self.toggleLayer setNeedsDisplay];
 	}
@@ -460,6 +461,7 @@
 	{
 		[offText release];
 		offText = [newOffText copy];
+        [self sizeToFit];
 		self.toggleLayer.offString = offText;
 		[self.toggleLayer setNeedsDisplay];
 	}
