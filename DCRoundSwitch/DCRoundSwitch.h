@@ -8,6 +8,7 @@
 //  http://domesticcat.com.au/projects
 //  http://github.com/domesticcatsoftware/DCRoundSwitch
 //
+//  Modified by Jose Luis Campaña to add text and offTint color support
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
@@ -22,6 +23,13 @@
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
 @property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
 @property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized
+
+//iZ3 Additions
+@property (nonatomic, retain) UIColor *onTextColor;
+@property (nonatomic, retain) UIColor *offTextColor;
+@property (nonatomic, retain) UIColor *onTextShadowColor;
+@property (nonatomic, retain) UIColor *offTextShadowColor;
+@property (nonatomic, retain) UIColor *offTintColor;
 
 + (Class)knobLayerClass;
 + (Class)outlineLayerClass;

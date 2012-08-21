@@ -37,3 +37,7 @@ Collaboration
 -------------
 
 If you have any feature requests/bugfixes etc. feel free to help out and send a pull request, or create a new issue.
+
+iZ3 Additions
+=============
+Added more customizations properties as chante on/off text color and shadow + offTint

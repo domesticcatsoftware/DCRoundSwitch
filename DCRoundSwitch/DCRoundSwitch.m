@@ -8,6 +8,7 @@
 //  http://domesticcat.com.au/projects
 //  http://github.com/domesticcatsoftware/DCRoundSwitch
 //
+//  Modified by Jose Luis Campaña to add text and offTint color support
 
 #import "DCRoundSwitch.h"
 #import "DCRoundSwitchToggleLayer.h"
@@ -34,6 +35,13 @@
 @synthesize on, onText, offText;
 @synthesize onTintColor;
 
+//iZ3 Additions
+@synthesize onTextColor = _onTextColor;
+@synthesize offTextColor = _offTextColor;
+@synthesize onTextShadowColor = _onTextShadowColor;
+@synthesize offTextShadowColor = _offTextShadowColor;
+@synthesize offTintColor = _offTintColor;
+
 #pragma mark -
 #pragma mark Init & Memory Managment
 
@@ -47,6 +55,13 @@
 	[onTintColor release];
 	[onText release];
 	[offText release];
+    
+    //iZ3 Additions
+    [_onTextColor release];
+    [_offTextColor release];
+    [_offTextShadowColor release];
+    [_onTextShadowColor release];
+    [_offTintColor release];
 
 	[super dealloc];
 }
@@ -463,6 +478,67 @@
 		self.toggleLayer.offString = offText;
 		[self.toggleLayer setNeedsDisplay];
 	}
+}
+
+#pragma mark iZ3 Additions
+- (void)setOnTextColor:(UIColor *)onTextColor
+{
+	if (_onTextColor != onTextColor)
+	{
+		[_onTextColor release];
+		_onTextColor = [onTextColor retain];
+        
+		self.toggleLayer.onTextColor = onTextColor;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
+- (void)setOffTextColor:(UIColor *)offTextColor
+{
+	if (_offTextColor != offTextColor)
+	{
+		[_offTextColor release];
+		_offTextColor = [offTextColor retain];
+        
+		self.toggleLayer.offTextColor = offTextColor;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
+- (void)setOnTextShadowColor:(UIColor *)onTextShadowColor
+{
+	if (_onTextShadowColor != onTextShadowColor)
+	{
+		[_onTextShadowColor release];
+		_onTextShadowColor = [onTextShadowColor retain];
+        
+		self.toggleLayer.onTextShadowColor = onTextShadowColor;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
+- (void)setOffTextShadowColor:(UIColor *)offTextShadowColor
+{
+	if (_offTextShadowColor != offTextShadowColor)
+	{
+		[_offTextShadowColor release];
+		_offTextShadowColor = [offTextShadowColor retain];
+        
+		self.toggleLayer.offTextShadowColor = offTextShadowColor;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
+-(void)setOffTintColor:(UIColor *)offTintColor
+{
+        if (_offTintColor != offTintColor)
+        {
+            [_offTintColor release];
+            _offTintColor = [offTintColor retain];
+            
+            self.toggleLayer.offTintColor = _offTintColor;
+            [self.toggleLayer setNeedsDisplay];
+        }
 }
 
 @end
