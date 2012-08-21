@@ -37,3 +37,14 @@ Collaboration
 -------------
 
 If you have any feature requests/bugfixes etc. feel free to help out and send a pull request, or create a new issue.
+
+iZ3 Additions
+=============
+
+More color customizations:
+
+* onTextColor
+* offTextColor
+* onTextShadowColor
+* offTextShadowColor
+* offTintColor
