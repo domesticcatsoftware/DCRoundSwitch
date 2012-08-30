@@ -465,4 +465,9 @@
 	}
 }
 
+- (NSString *)accessibilityValue
+{
+	return self.on ? self.onText : self.offText;
+}
+
 @end
