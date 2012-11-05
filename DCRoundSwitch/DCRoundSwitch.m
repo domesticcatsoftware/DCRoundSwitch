@@ -132,6 +132,10 @@
 	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]] autorelease];
 	self.toggleLayer.drawOnTint = NO;
 	self.toggleLayer.clip = YES;
+    if( self.toggleLayer.bounds.size.height == 0 )
+    {
+        self.toggleLayer.frame = CGRectMake( 0, 0, self.bounds.size.height, self.bounds.size.height);
+    }
 	[self.layer addSublayer:self.toggleLayer];
 	[self.toggleLayer setNeedsDisplay];
 
@@ -240,7 +244,7 @@
 	if (self.ignoreTap) return;
 	
 	if (gesture.state == UIGestureRecognizerStateEnded)
-		[self setOn:!self.on animated:YES];
+		[self setOn:!self.on animated:YES ignoreControlEvents:NO];
 }
 
 - (void)toggleDragged:(UIPanGestureRecognizer *)gesture
@@ -285,7 +289,7 @@
 	{
 		// flip the switch to on or off depending on which half it ends at
 		CGFloat toggleCenter = CGRectGetMidX(self.toggleLayer.frame);
-		[self setOn:(toggleCenter > CGRectGetMidX(self.bounds)) animated:YES];
+		[self setOn:(toggleCenter > CGRectGetMidX(self.bounds)) animated:YES ignoreControlEvents:NO];
 	}
 
 	// send off the appropriate actions (not fully tested yet)
@@ -329,14 +333,19 @@
 
 #pragma mark Setters/Getters
 
+-(void)setEnabled:(BOOL)aenabled {
+    [super setEnabled:aenabled];
+    [self.toggleLayer setEnabled:aenabled];
+}
+
 - (void)setOn:(BOOL)newOn
 {
-	[self setOn:newOn animated:NO];
+	[self setOn:newOn animated:NO ignoreControlEvents:YES];
 }
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated
 {
-	[self setOn:newOn animated:animated ignoreControlEvents:NO];
+	[self setOn:newOn animated:animated ignoreControlEvents:YES];
 }
 
 - (void)setOn:(BOOL)newOn animated:(BOOL)animated ignoreControlEvents:(BOOL)ignoreControlEvents
@@ -417,7 +426,7 @@
 	}
 }
 
-- (void)layoutSubviews;
+- (void)layoutSubviews
 {
 	CGFloat knobRadius = self.bounds.size.height + 2.0;
 	self.knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
@@ -445,10 +454,11 @@
 
 - (void)setOnText:(NSString *)newOnText
 {
-	if (newOnText != onText)
+	if ( ![newOnText isEqualToString:onText] )
 	{
 		[onText release];
 		onText = [newOnText copy];
+        [self sizeToFit];
 		self.toggleLayer.onString = onText;
 		[self.toggleLayer setNeedsDisplay];
 	}
@@ -460,6 +470,7 @@
 	{
 		[offText release];
 		offText = [newOffText copy];
+        [self sizeToFit];
 		self.toggleLayer.offString = offText;
 		[self.toggleLayer setNeedsDisplay];
 	}
