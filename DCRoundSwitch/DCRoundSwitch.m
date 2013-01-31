@@ -33,6 +33,7 @@
 @synthesize outlineLayer, toggleLayer, knobLayer, clipLayer, ignoreTap;
 @synthesize on, onText, offText;
 @synthesize onTintColor, offTintColor;
+@synthesize userID;
 
 #pragma mark -
 #pragma mark Init & Memory Managment
