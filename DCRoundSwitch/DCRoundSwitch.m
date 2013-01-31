@@ -32,7 +32,8 @@
 @implementation DCRoundSwitch
 @synthesize outlineLayer, toggleLayer, knobLayer, clipLayer, ignoreTap;
 @synthesize on, onText, offText;
-@synthesize onTintColor;
+@synthesize onTintColor, offTintColor;
+@synthesize userID;
 
 #pragma mark -
 #pragma mark Init & Memory Managment
@@ -45,6 +46,7 @@
 	[clipLayer release];
 
 	[onTintColor release];
+    [offTintColor release];
 	[onText release];
 	[offText release];
 
@@ -115,7 +117,7 @@
 	// the switch has three layers, (ordered from bottom to top):
 	//
 	// * toggleLayer * (bottom of the layer stack)
-	// this layer contains the onTintColor (blue by default), the text, and the shadown for the knob.  the knob shadow is
+	// this layer contains the onTintColor (blue by default), and the offTintColor (off-white by default), the text, and the shadown for the knob.  the knob shadow is
 	// on this layer because it needs to go under the outlineLayer so it doesn't bleed out over the edge of the control.
 	// this layer moves when the switch moves
 
@@ -129,7 +131,7 @@
 	// this is the knob, and sits on top of the layer stack. note that the knob shadow is NOT drawn here, it is drawn on the
 	// toggleLayer so it doesn't bleed out over the outlineLayer.
 
-	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]] autorelease];
+	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0] offTintColor:[UIColor colorWithWhite:0.963 alpha:1.0]] autorelease];
 	self.toggleLayer.drawOnTint = NO;
 	self.toggleLayer.clip = YES;
 	[self.layer addSublayer:self.toggleLayer];
@@ -417,10 +419,21 @@
 	}
 }
 
+- (void)setOffTintColor:(UIColor *)anOffTintColor
+{
+	if (anOffTintColor != offTintColor)
+	{
+		[offTintColor release];
+		offTintColor = [anOffTintColor retain];
+		self.toggleLayer.offTintColor = anOffTintColor;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
 - (void)layoutSubviews;
 {
 	CGFloat knobRadius = self.bounds.size.height + 2.0;
-	self.knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
+	self.knobLayer.frame = CGRectMake(0, 0, knobRadius - 2.0, knobRadius);
 	CGSize toggleSize = CGSizeMake(self.bounds.size.width * 2 - (knobRadius - 4), self.bounds.size.height);
 	CGFloat minToggleX = -toggleSize.width / 2.0 + knobRadius / 2.0 - 1;
 	CGFloat maxToggleX = -1;
