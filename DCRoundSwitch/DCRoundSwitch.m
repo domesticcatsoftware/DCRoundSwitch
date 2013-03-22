@@ -353,7 +353,8 @@
 	[self positionLayersAndMask];
 
 	// retain all our targets so they don't disappear before the actions get sent at the end of the animation
-	[[self allTargets] makeObjectsPerformSelector:@selector(retain)];
+	NSArray *targets = [[self allTargets] copy];
+	[targets makeObjectsPerformSelector:@selector(retain)];
 
 	[CATransaction setCompletionBlock:^{
 		[CATransaction begin];
@@ -399,7 +400,8 @@
 			if (previousOn != on && !ignoreControlEvents)
 				[self sendActionsForControlEvents:UIControlEventValueChanged];
 
-			[[self allTargets] makeObjectsPerformSelector:@selector(release)];
+			[targets makeObjectsPerformSelector:@selector(release)];
+			[targets release];
 		}];
 
 		[CATransaction commit];
