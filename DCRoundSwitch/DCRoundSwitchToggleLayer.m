@@ -46,7 +46,7 @@
 - (void)drawInContext:(CGContextRef)context
 {
 	CGFloat knobRadius = self.bounds.size.height - 2.0;
-	CGFloat knobCenter = self.bounds.size.width / 2.0;
+	CGFloat knobCenter = CGRectGetMidX(self.bounds);
 	CGRect knobRect = CGRectMake(knobCenter - knobRadius / 2.0, 1.0, knobRadius, knobRadius);
 
 	if (self.clip)
@@ -76,7 +76,7 @@
 	
 
 	// strings
-	CGFloat textSpaceWidth = (self.bounds.size.width / 2) - (knobRadius / 2);
+	CGFloat textSpaceWidth = CGRectGetMidX(self.bounds) - (knobRadius / 2);
 
 	UIGraphicsPushContext(context);
 
