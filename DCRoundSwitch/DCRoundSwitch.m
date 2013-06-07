@@ -14,7 +14,13 @@
 #import "DCRoundSwitchOutlineLayer.h"
 #import "DCRoundSwitchKnobLayer.h"
 
-@interface DCRoundSwitch ()
+@interface DCRoundSwitch () <UIGestureRecognizerDelegate>
+
+@property (nonatomic, retain) DCRoundSwitchOutlineLayer *outlineLayer;
+@property (nonatomic, retain) DCRoundSwitchToggleLayer *toggleLayer;
+@property (nonatomic, retain) DCRoundSwitchKnobLayer *knobLayer;
+@property (nonatomic, retain) CAShapeLayer *clipLayer;
+@property (nonatomic, assign) BOOL ignoreTap;
 
 - (void)setup;
 - (void)useLayerMasking;
@@ -24,6 +30,7 @@
 @end
 
 @implementation DCRoundSwitch
+@synthesize outlineLayer, toggleLayer, knobLayer, clipLayer, ignoreTap;
 @synthesize on, onText, offText, onImage, offImage;
 @synthesize onTintColor;
 
@@ -32,6 +39,11 @@
 
 - (void)dealloc
 {
+	[outlineLayer release];
+	[toggleLayer release];
+	[knobLayer release];
+	[clipLayer release];
+
 	[onTintColor release];
 	[onText release];
 	[offText release];
@@ -72,6 +84,18 @@
 	return self;
 }
 
++ (Class)knobLayerClass {
+    return [DCRoundSwitchKnobLayer class];
+}
+
++ (Class)outlineLayerClass {
+    return [DCRoundSwitchOutlineLayer class];
+}
+
++ (Class)toggleLayerClass {
+    return [DCRoundSwitchToggleLayer class];
+}
+
 - (void)setup
 {
 	// this way you can set the background color to black or something similar so it can be seen in IB
@@ -86,8 +110,9 @@
 		self.autoresizingMask ^= UIViewAutoresizingFlexibleWidth;
 
 	// setup default texts
-	self.onText = NSLocalizedString(@"ON", @"Used inside switches");
-	self.offText = NSLocalizedString(@"OFF", @"Used inside switches");
+	NSBundle *uiKitBundle = [NSBundle bundleWithIdentifier:@"com.apple.UIKit"];
+	self.onText = uiKitBundle ? [uiKitBundle localizedStringForKey:@"ON" value:nil table:nil] : @"ON";
+	self.offText = uiKitBundle ? [uiKitBundle localizedStringForKey:@"OFF" value:nil table:nil] : @"OFF";
 
 	// the switch has three layers, (ordered from bottom to top):
 	//
@@ -106,34 +131,35 @@
 	// this is the knob, and sits on top of the layer stack. note that the knob shadow is NOT drawn here, it is drawn on the
 	// toggleLayer so it doesn't bleed out over the outlineLayer.
 
-	toggleLayer = [[DCRoundSwitchToggleLayer alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]];
-	toggleLayer.drawOnTint = NO;
-	toggleLayer.clip = YES;
-	[self.layer addSublayer:toggleLayer];
-	[toggleLayer setNeedsDisplay];
+	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]] autorelease];
+	self.toggleLayer.drawOnTint = NO;
+	self.toggleLayer.clip = YES;
+	[self.layer addSublayer:self.toggleLayer];
+	[self.toggleLayer setNeedsDisplay];
 
-	outlineLayer = [DCRoundSwitchOutlineLayer layer];
-	[toggleLayer addSublayer:outlineLayer];
-	[outlineLayer setNeedsDisplay];
+	self.outlineLayer = [[[self class] outlineLayerClass] layer];
+	[self.toggleLayer addSublayer:self.outlineLayer];
+	[self.outlineLayer setNeedsDisplay];
 
-	knobLayer = [DCRoundSwitchKnobLayer layer];
-	[self.layer addSublayer:knobLayer];
-	[knobLayer setNeedsDisplay];
+	self.knobLayer = [[[self class] knobLayerClass] layer];
+	[self.layer addSublayer:self.knobLayer];
+	[self.knobLayer setNeedsDisplay];
 
-	toggleLayer.contentsScale = outlineLayer.contentsScale = knobLayer.contentsScale = [[UIScreen mainScreen] scale];
+	self.toggleLayer.contentsScale = self.outlineLayer.contentsScale = self.knobLayer.contentsScale = [[UIScreen mainScreen] scale];
 
 	// tap gesture for toggling the switch
 	UITapGestureRecognizer *tapGestureRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self 
 																						   action:@selector(tapped:)] autorelease];
+	[tapGestureRecognizer setDelegate:self];
 	[self addGestureRecognizer:tapGestureRecognizer];
 
 	// pan gesture for moving the switch knob manually
-	UIPanGestureRecognizer *panGesture = [[[UIPanGestureRecognizer alloc] initWithTarget:self 
+	UIPanGestureRecognizer *panGestureRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self
 																				 action:@selector(toggleDragged:)] autorelease];
-	[self addGestureRecognizer:panGesture];
+	[panGestureRecognizer setDelegate:self];
+	[self addGestureRecognizer:panGestureRecognizer];
 
-	// call setFrame: manually so the initial layout can be done
-	[self setFrame:self.frame];
+	[self setNeedsLayout];
 
 	// setup the layer positions
 	[self positionLayersAndMask];
@@ -141,20 +167,21 @@
 
 #pragma mark -
 #pragma mark Setup Frame/Layout
+
 - (void)sizeToFit
 {
 	[super sizeToFit];
 	
-	NSString *onString = toggleLayer.onString;
-	NSString *offString = toggleLayer.offString;
+	NSString *onString = self.toggleLayer.onString;
+	NSString *offString = self.toggleLayer.offString;
 
-	CGFloat width = [onString sizeWithFont:toggleLayer.labelFont].width;
-	CGFloat offWidth = [offString sizeWithFont:toggleLayer.labelFont].width;
+	CGFloat width = [onString sizeWithFont:self.toggleLayer.labelFont].width;
+	CGFloat offWidth = [offString sizeWithFont:self.toggleLayer.labelFont].width;
 	
 	if(offWidth > width)
 		width = offWidth;
 	
-	width += toggleLayer.bounds.size.width * 2.;//add 2x the knob for padding
+	width += self.toggleLayer.bounds.size.width * 2.;//add 2x the knob for padding
 	
 	CGRect newFrame = self.frame;
 	CGFloat currentWidth = newFrame.size.width;
@@ -170,16 +197,16 @@
 - (void)useLayerMasking
 {
 	// turn of the manual clipping (done in toggleLayer's drawInContext:)
-	toggleLayer.clip = NO;
-	toggleLayer.drawOnTint = YES;
-	[toggleLayer setNeedsDisplay];
+	self.toggleLayer.clip = NO;
+	self.toggleLayer.drawOnTint = YES;
+	[self.toggleLayer setNeedsDisplay];
 
 	// create the layer mask and add that to the toggleLayer
-	clipLayer = [CAShapeLayer layer];
+	self.clipLayer = [CAShapeLayer layer];
 	UIBezierPath *clipPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
 														cornerRadius:self.bounds.size.height / 2.0];
-	clipLayer.path = clipPath.CGPath;
-	toggleLayer.mask = clipLayer;
+	self.clipLayer.path = clipPath.CGPath;
+	self.toggleLayer.mask = self.clipLayer;
 }
 
 - (void)removeLayerMask
@@ -188,30 +215,31 @@
 	[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 
 	// remove the layer mask (put on in useLayerMasking)
-	toggleLayer.mask = nil;
+	self.toggleLayer.mask = nil;
 
 	// renable manual clipping (done in toggleLayer's drawInContext:)
-	toggleLayer.clip = YES;
-	toggleLayer.drawOnTint = self.on;
-	[toggleLayer setNeedsDisplay];
+	self.toggleLayer.clip = YES;
+	self.toggleLayer.drawOnTint = self.on;
+	[self.toggleLayer setNeedsDisplay];
 }
 
 - (void)positionLayersAndMask
 {
 	// repositions the underlying toggle and the layer mask, plus the knob
-	toggleLayer.mask.position = CGPointMake(-toggleLayer.frame.origin.x, 0.0);
-	outlineLayer.frame = CGRectMake(-toggleLayer.frame.origin.x, 0, self.bounds.size.width, self.bounds.size.height);
-	knobLayer.frame = CGRectMake(toggleLayer.frame.origin.x + toggleLayer.frame.size.width / 2.0 - knobLayer.frame.size.width / 2.0,
+	self.toggleLayer.mask.position = CGPointMake(-self.toggleLayer.frame.origin.x, 0.0);
+	self.outlineLayer.frame = CGRectMake(-self.toggleLayer.frame.origin.x, 0, self.bounds.size.width, self.bounds.size.height);
+	self.knobLayer.frame = CGRectMake(self.toggleLayer.frame.origin.x + self.toggleLayer.frame.size.width / 2.0 - self.knobLayer.frame.size.width / 2.0,
 								 -1,
-								 knobLayer.frame.size.width,
-								 knobLayer.frame.size.height);
+								 self.knobLayer.frame.size.width,
+								 self.knobLayer.frame.size.height);
 }
 
 #pragma mark -
 #pragma mark Interaction
+
 - (void)tapped:(UITapGestureRecognizer *)gesture
 {
-	if (ignoreTap) return;
+	if (self.ignoreTap) return;
 	
 	if (gesture.state == UIGestureRecognizerStateEnded)
 		[self setOn:!self.on animated:YES];
@@ -219,7 +247,7 @@
 
 - (void)toggleDragged:(UIPanGestureRecognizer *)gesture
 {
-	CGFloat minToggleX = -toggleLayer.frame.size.width / 2.0 + toggleLayer.frame.size.height / 2.0;
+	CGFloat minToggleX = -self.toggleLayer.frame.size.width / 2.0 + self.toggleLayer.frame.size.height / 2.0;
 	CGFloat maxToggleX = -1;
 
 	if (gesture.state == UIGestureRecognizerStateBegan)
@@ -228,7 +256,7 @@
 		[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 		[self useLayerMasking];
 		[self positionLayersAndMask];
-		knobLayer.gripped = YES;
+		self.knobLayer.gripped = YES;
 	}
 	else if (gesture.state == UIGestureRecognizerStateChanged)
 	{
@@ -238,17 +266,17 @@
 		[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 
 		// darken the knob
-		if (!knobLayer.gripped)
-			knobLayer.gripped = YES;
+		if (!self.knobLayer.gripped)
+			self.knobLayer.gripped = YES;
 
 		// move the toggleLayer using the translation of the gesture, keeping it inside the outline.
-		CGFloat newX = toggleLayer.frame.origin.x + translation.x;
+		CGFloat newX = self.toggleLayer.frame.origin.x + translation.x;
 		if (newX < minToggleX) newX = minToggleX;
 		if (newX > maxToggleX) newX = maxToggleX;
-		toggleLayer.frame = CGRectMake(newX,
-									   toggleLayer.frame.origin.y,
-									   toggleLayer.frame.size.width,
-									   toggleLayer.frame.size.height);
+		self.toggleLayer.frame = CGRectMake(newX,
+									   self.toggleLayer.frame.origin.y,
+									   self.toggleLayer.frame.size.width,
+									   self.toggleLayer.frame.size.height);
 
 		// this will re-position the layer mask and knob
 		[self positionLayersAndMask];
@@ -258,7 +286,7 @@
 	else if (gesture.state == UIGestureRecognizerStateEnded)
 	{
 		// flip the switch to on or off depending on which half it ends at
-		CGFloat toggleCenter = CGRectGetMidX(toggleLayer.frame);
+		CGFloat toggleCenter = CGRectGetMidX(self.toggleLayer.frame);
 		[self setOn:(toggleCenter > CGRectGetMidX(self.bounds)) animated:YES];
 	}
 
@@ -272,11 +300,11 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if (ignoreTap) return;
+	if (self.ignoreTap) return;
 
 	[super touchesBegan:touches withEvent:event];
 
-	knobLayer.gripped = YES;
+	self.knobLayer.gripped = YES;
 	[self sendActionsForControlEvents:UIControlEventTouchDown];
 }
 
@@ -292,6 +320,13 @@
 	[super touchesCancelled:touches withEvent:event];
 
 	[self sendActionsForControlEvents:UIControlEventTouchUpOutside];
+}
+
+#pragma mark UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer;
+{
+	return !self.ignoreTap;
 }
 
 #pragma mark Setters/Getters
@@ -310,14 +345,17 @@
 {
 	BOOL previousOn = self.on;
 	on = newOn;
-	ignoreTap = YES;
+	self.ignoreTap = YES;
 
 	[CATransaction setAnimationDuration:0.014];
-	knobLayer.gripped = YES;
+	self.knobLayer.gripped = YES;
 
 	// setup by turning off the manual clipping of the toggleLayer and setting up a layer mask.
 	[self useLayerMasking];
 	[self positionLayersAndMask];
+
+	// retain all our targets so they don't disappear before the actions get sent at the end of the animation
+	[[self allTargets] makeObjectsPerformSelector:@selector(retain)];
 
 	[CATransaction setCompletionBlock:^{
 		[CATransaction begin];
@@ -326,42 +364,44 @@
 		else
 			[CATransaction setValue:(id)kCFBooleanFalse forKey:kCATransactionDisableActions];
 
-		CGFloat minToggleX = -toggleLayer.frame.size.width / 2.0 + toggleLayer.frame.size.height / 2.0;
+		CGFloat minToggleX = -self.toggleLayer.frame.size.width / 2.0 + self.toggleLayer.frame.size.height / 2.0;
 		CGFloat maxToggleX = -1;
 
 
 		if (self.on)
 		{
-			toggleLayer.frame = CGRectMake(maxToggleX,
-										   toggleLayer.frame.origin.y,
-										   toggleLayer.frame.size.width,
-										   toggleLayer.frame.size.height);
+			self.toggleLayer.frame = CGRectMake(maxToggleX,
+										   self.toggleLayer.frame.origin.y,
+										   self.toggleLayer.frame.size.width,
+										   self.toggleLayer.frame.size.height);
 		}
 		else
 		{
-			toggleLayer.frame = CGRectMake(minToggleX,
-										   toggleLayer.frame.origin.y,
-										   toggleLayer.frame.size.width,
-										   toggleLayer.frame.size.height);
+			self.toggleLayer.frame = CGRectMake(minToggleX,
+										   self.toggleLayer.frame.origin.y,
+										   self.toggleLayer.frame.size.width,
+										   self.toggleLayer.frame.size.height);
 		}
 
-		if (!toggleLayer.mask)
+		if (!self.toggleLayer.mask)
 		{
 			[self useLayerMasking];
-			[toggleLayer setNeedsDisplay];
+			[self.toggleLayer setNeedsDisplay];
 		}
 
 		[self positionLayersAndMask];
 
-		knobLayer.gripped = NO;
+		self.knobLayer.gripped = NO;
 
 		[CATransaction setCompletionBlock:^{
 			[self removeLayerMask];
-			ignoreTap = NO;
+			self.ignoreTap = NO;
 
 			// send the action here so it get's sent at the end of the animations
 			if (previousOn != on && !ignoreControlEvents)
 				[self sendActionsForControlEvents:UIControlEventValueChanged];
+
+			[[self allTargets] makeObjectsPerformSelector:@selector(release)];
 		}];
 
 		[CATransaction commit];
@@ -374,32 +414,30 @@
 	{
 		[onTintColor release];
 		onTintColor = [anOnTintColor retain];
-		toggleLayer.onTintColor = anOnTintColor;
-		[toggleLayer setNeedsDisplay];
+		self.toggleLayer.onTintColor = anOnTintColor;
+		[self.toggleLayer setNeedsDisplay];
 	}
 }
 
-- (void)setFrame:(CGRect)aFrame
+- (void)layoutSubviews;
 {
-	[super setFrame:aFrame];
-
 	CGFloat knobRadius = self.bounds.size.height + 2.0;
-	knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
+	self.knobLayer.frame = CGRectMake(0, 0, knobRadius, knobRadius);
 	CGSize toggleSize = CGSizeMake(self.bounds.size.width * 2 - (knobRadius - 4), self.bounds.size.height);
 	CGFloat minToggleX = -toggleSize.width / 2.0 + knobRadius / 2.0 - 1;
 	CGFloat maxToggleX = -1;
 
 	if (self.on)
 	{
-		toggleLayer.frame = CGRectMake(maxToggleX,
-									   toggleLayer.frame.origin.y,
+		self.toggleLayer.frame = CGRectMake(maxToggleX,
+									   self.toggleLayer.frame.origin.y,
 									   toggleSize.width,
 									   toggleSize.height);
 	}
 	else
 	{
-		toggleLayer.frame = CGRectMake(minToggleX,
-									   toggleLayer.frame.origin.y,
+		self.toggleLayer.frame = CGRectMake(minToggleX,
+									   self.toggleLayer.frame.origin.y,
 									   toggleSize.width,
 									   toggleSize.height);
 	}
@@ -413,8 +451,8 @@
 	{
 		[onText release];
 		onText = [newOnText copy];
-		toggleLayer.onString = onText;
-		[toggleLayer setNeedsDisplay];
+		self.toggleLayer.onString = onText;
+		[self.toggleLayer setNeedsDisplay];
 	}
 }
 
@@ -424,8 +462,8 @@
 	{
 		[offText release];
 		offText = [newOffText copy];
-		toggleLayer.offString = offText;
-		[toggleLayer setNeedsDisplay];
+		self.toggleLayer.offString = offText;
+		[self.toggleLayer setNeedsDisplay];
 	}
 }
 

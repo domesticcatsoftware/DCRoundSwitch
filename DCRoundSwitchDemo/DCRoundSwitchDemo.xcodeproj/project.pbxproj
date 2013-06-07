@@ -10,31 +10,19 @@
 		AB6FE5D313C420A3006BCDBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D213C420A3006BCDBB /* UIKit.framework */; };
 		AB6FE5D513C420A3006BCDBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D413C420A3006BCDBB /* Foundation.framework */; };
 		AB6FE5D713C420A3006BCDBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */; };
-		AB6FE5DD13C420A3006BCDBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */; };
 		AB6FE5E013C420A3006BCDBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5DF13C420A3006BCDBB /* main.m */; };
 		AB6FE5E313C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */; };
-		AB6FE5E613C420A3006BCDBB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5E413C420A3006BCDBB /* MainWindow.xib */; };
 		AB6FE5E913C420A3006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */; };
-		AB6FE5EC13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */; };
 		AB6FE60313C420D6006BCDBB /* DCRoundSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */; };
 		AB6FE60413C420D6006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FE13C420D6006BCDBB /* DCRoundSwitchKnobLayer.m */; };
 		AB6FE60513C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */; };
 		AB6FE60613C420D6006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */; };
 		AB6FE60913C420DF006BCDBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE60813C420DF006BCDBB /* QuartzCore.framework */; };
-		AB6FE66613C44146006BCDBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5DF13C420A3006BCDBB /* main.m */; };
-		AB6FE66713C44146006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */; };
-		AB6FE66813C44146006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */; };
-		AB6FE66913C44146006BCDBB /* DCRoundSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */; };
-		AB6FE66A13C44146006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE5FE13C420D6006BCDBB /* DCRoundSwitchKnobLayer.m */; };
-		AB6FE66B13C44146006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60013C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m */; };
-		AB6FE66C13C44146006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */; };
-		AB6FE67213C44146006BCDBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE60813C420DF006BCDBB /* QuartzCore.framework */; };
-		AB6FE67313C44146006BCDBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D213C420A3006BCDBB /* UIKit.framework */; };
-		AB6FE67413C44146006BCDBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D413C420A3006BCDBB /* Foundation.framework */; };
-		AB6FE67513C44146006BCDBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */; };
-		AB6FE67713C44146006BCDBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */; };
-		AB6FE67813C44146006BCDBB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5E413C420A3006BCDBB /* MainWindow.xib */; };
-		AB6FE67913C44146006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */; };
+		B5FFD9C815762AC60085F0FA /* TestSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FFD9C715762AC60085F0FA /* TestSwitch.m */; };
+		B5FFD9CC15762AFC0085F0FA /* TestSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FFD9CB15762AFC0085F0FA /* TestSwitchKnobLayer.m */; };
+		DA7A60B613FEA495000F7F8D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60B713FEA495000F7F8D /* MainWindow.xib */; };
+		DA7A60B813FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */; };
+		DA7A60BC13FEA655000F7F8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA7A60BA13FEA654000F7F8D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,15 +31,12 @@
 		AB6FE5D413C420A3006BCDBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AB6FE5DA13C420A3006BCDBB /* DCRoundSwitchDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCRoundSwitchDemo-Info.plist"; sourceTree = "<group>"; };
-		AB6FE5DC13C420A3006BCDBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB6FE5DE13C420A3006BCDBB /* DCRoundSwitchDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCRoundSwitchDemo-Prefix.pch"; sourceTree = "<group>"; };
 		AB6FE5DF13C420A3006BCDBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB6FE5E113C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchDemoAppDelegate.h; sourceTree = "<group>"; };
 		AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchDemoAppDelegate.m; sourceTree = "<group>"; };
-		AB6FE5E513C420A3006BCDBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		AB6FE5E713C420A3006BCDBB /* DCRoundSwitchDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchDemoViewController.h; sourceTree = "<group>"; };
 		AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchDemoViewController.m; sourceTree = "<group>"; };
-		AB6FE5EB13C420A3006BCDBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DCRoundSwitchDemoViewController.xib; sourceTree = "<group>"; };
 		AB6FE5FB13C420D6006BCDBB /* DCRoundSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitch.h; sourceTree = "<group>"; };
 		AB6FE5FC13C420D6006BCDBB /* DCRoundSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitch.m; sourceTree = "<group>"; };
 		AB6FE5FD13C420D6006BCDBB /* DCRoundSwitchKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchKnobLayer.h; sourceTree = "<group>"; };
@@ -61,7 +46,14 @@
 		AB6FE60113C420D6006BCDBB /* DCRoundSwitchToggleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchToggleLayer.h; sourceTree = "<group>"; };
 		AB6FE60213C420D6006BCDBB /* DCRoundSwitchToggleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchToggleLayer.m; sourceTree = "<group>"; };
 		AB6FE60813C420DF006BCDBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AB6FE67D13C44146006BCDBB /* DCRoundSwitchDemo copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DCRoundSwitchDemo copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5FFD9C615762AC60085F0FA /* TestSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSwitch.h; sourceTree = "<group>"; };
+		B5FFD9C715762AC60085F0FA /* TestSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSwitch.m; sourceTree = "<group>"; };
+		B5FFD9CA15762AFC0085F0FA /* TestSwitchKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSwitchKnobLayer.h; sourceTree = "<group>"; };
+		B5FFD9CB15762AFC0085F0FA /* TestSwitchKnobLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSwitchKnobLayer.m; sourceTree = "<group>"; };
+		DA7A60B713FEA495000F7F8D /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DCRoundSwitchDemoViewController.xib; sourceTree = "<group>"; };
+		DA7A60BB13FEA655000F7F8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA7A60BD13FEA65A000F7F8D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +65,6 @@
 				AB6FE5D313C420A3006BCDBB /* UIKit.framework in Frameworks */,
 				AB6FE5D513C420A3006BCDBB /* Foundation.framework in Frameworks */,
 				AB6FE5D713C420A3006BCDBB /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB6FE67113C44146006BCDBB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6FE67213C44146006BCDBB /* QuartzCore.framework in Frameworks */,
-				AB6FE67313C44146006BCDBB /* UIKit.framework in Frameworks */,
-				AB6FE67413C44146006BCDBB /* Foundation.framework in Frameworks */,
-				AB6FE67513C44146006BCDBB /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				AB6FE5CE13C420A3006BCDBB /* DCRoundSwitchDemo.app */,
-				AB6FE67D13C44146006BCDBB /* DCRoundSwitchDemo copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,10 +105,15 @@
 				AB6FE5FA13C420D6006BCDBB /* DCRoundSwitch */,
 				AB6FE5E113C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.h */,
 				AB6FE5E213C420A3006BCDBB /* DCRoundSwitchDemoAppDelegate.m */,
-				AB6FE5E413C420A3006BCDBB /* MainWindow.xib */,
+				DA7A60B713FEA495000F7F8D /* MainWindow.xib */,
 				AB6FE5E713C420A3006BCDBB /* DCRoundSwitchDemoViewController.h */,
 				AB6FE5E813C420A3006BCDBB /* DCRoundSwitchDemoViewController.m */,
-				AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */,
+				DA7A60B913FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib */,
+				B5FFD9C615762AC60085F0FA /* TestSwitch.h */,
+				B5FFD9C715762AC60085F0FA /* TestSwitch.m */,
+				B5FFD9CA15762AFC0085F0FA /* TestSwitchKnobLayer.h */,
+				B5FFD9CB15762AFC0085F0FA /* TestSwitchKnobLayer.m */,
+				DA7A60BA13FEA654000F7F8D /* Localizable.strings */,
 				AB6FE5D913C420A3006BCDBB /* Supporting Files */,
 			);
 			path = DCRoundSwitchDemo;
@@ -138,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				AB6FE5DA13C420A3006BCDBB /* DCRoundSwitchDemo-Info.plist */,
-				AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */,
 				AB6FE5DE13C420A3006BCDBB /* DCRoundSwitchDemo-Prefix.pch */,
 				AB6FE5DF13C420A3006BCDBB /* main.m */,
 			);
@@ -181,34 +165,21 @@
 			productReference = AB6FE5CE13C420A3006BCDBB /* DCRoundSwitchDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB6FE66413C44146006BCDBB /* DCRoundSwitchDemo copy */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB6FE67A13C44146006BCDBB /* Build configuration list for PBXNativeTarget "DCRoundSwitchDemo copy" */;
-			buildPhases = (
-				AB6FE66513C44146006BCDBB /* Sources */,
-				AB6FE67113C44146006BCDBB /* Frameworks */,
-				AB6FE67613C44146006BCDBB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "DCRoundSwitchDemo copy";
-			productName = DCRoundSwitchDemo;
-			productReference = AB6FE67D13C44146006BCDBB /* DCRoundSwitchDemo copy.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AB6FE5C513C420A3006BCDBB /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
 			buildConfigurationList = AB6FE5C813C420A3006BCDBB /* Build configuration list for PBXProject "DCRoundSwitchDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = AB6FE5C313C420A3006BCDBB;
 			productRefGroup = AB6FE5CF13C420A3006BCDBB /* Products */;
@@ -216,7 +187,6 @@
 			projectRoot = "";
 			targets = (
 				AB6FE5CD13C420A3006BCDBB /* DCRoundSwitchDemo */,
-				AB6FE66413C44146006BCDBB /* DCRoundSwitchDemo copy */,
 			);
 		};
 /* End PBXProject section */
@@ -226,19 +196,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB6FE5DD13C420A3006BCDBB /* InfoPlist.strings in Resources */,
-				AB6FE5E613C420A3006BCDBB /* MainWindow.xib in Resources */,
-				AB6FE5EC13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB6FE67613C44146006BCDBB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6FE67713C44146006BCDBB /* InfoPlist.strings in Resources */,
-				AB6FE67813C44146006BCDBB /* MainWindow.xib in Resources */,
-				AB6FE67913C44146006BCDBB /* DCRoundSwitchDemoViewController.xib in Resources */,
+				DA7A60B613FEA495000F7F8D /* MainWindow.xib in Resources */,
+				DA7A60B813FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib in Resources */,
+				DA7A60BC13FEA655000F7F8D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,48 +216,21 @@
 				AB6FE60413C420D6006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */,
 				AB6FE60513C420D6006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */,
 				AB6FE60613C420D6006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB6FE66513C44146006BCDBB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB6FE66613C44146006BCDBB /* main.m in Sources */,
-				AB6FE66713C44146006BCDBB /* DCRoundSwitchDemoAppDelegate.m in Sources */,
-				AB6FE66813C44146006BCDBB /* DCRoundSwitchDemoViewController.m in Sources */,
-				AB6FE66913C44146006BCDBB /* DCRoundSwitch.m in Sources */,
-				AB6FE66A13C44146006BCDBB /* DCRoundSwitchKnobLayer.m in Sources */,
-				AB6FE66B13C44146006BCDBB /* DCRoundSwitchOutlineLayer.m in Sources */,
-				AB6FE66C13C44146006BCDBB /* DCRoundSwitchToggleLayer.m in Sources */,
+				B5FFD9C815762AC60085F0FA /* TestSwitch.m in Sources */,
+				B5FFD9CC15762AFC0085F0FA /* TestSwitchKnobLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB6FE5DB13C420A3006BCDBB /* InfoPlist.strings */ = {
+		DA7A60BA13FEA654000F7F8D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AB6FE5DC13C420A3006BCDBB /* en */,
+				DA7A60BB13FEA655000F7F8D /* en */,
+				DA7A60BD13FEA65A000F7F8D /* fr */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AB6FE5E413C420A3006BCDBB /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB6FE5E513C420A3006BCDBB /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		AB6FE5EA13C420A3006BCDBB /* DCRoundSwitchDemoViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB6FE5EB13C420A3006BCDBB /* en */,
-			);
-			name = DCRoundSwitchDemoViewController.xib;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -343,6 +276,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -357,38 +291,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		AB6FE67B13C44146006BCDBB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
-				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
-				PRODUCT_NAME = "DCRoundSwitchDemo copy";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		AB6FE67C13C44146006BCDBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
-				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
-				PRODUCT_NAME = "DCRoundSwitchDemo copy";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -412,15 +317,6 @@
 			buildConfigurations = (
 				AB6FE5F013C420A3006BCDBB /* Debug */,
 				AB6FE5F113C420A3006BCDBB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB6FE67A13C44146006BCDBB /* Build configuration list for PBXNativeTarget "DCRoundSwitchDemo copy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB6FE67B13C44146006BCDBB /* Debug */,
-				AB6FE67C13C44146006BCDBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
