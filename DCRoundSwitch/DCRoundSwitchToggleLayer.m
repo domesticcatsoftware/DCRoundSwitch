@@ -12,7 +12,7 @@
 #import "DCRoundSwitchToggleLayer.h"
 
 @implementation DCRoundSwitchToggleLayer
-@synthesize onString, offString, onTintColor;
+@synthesize onString, offString, onImage, offImage, onTintColor;
 @synthesize drawOnTint;
 @synthesize clip;
 @synthesize labelFont;
@@ -22,6 +22,8 @@
 	[onString release];
 	[offString release];
 	[onTintColor release];
+	[onImage release];
+	[offImage release];
 
 	[super dealloc];
 }
@@ -33,9 +35,23 @@
 		self.onString = anOnString;
 		self.offString = anOffString;
 		self.onTintColor = anOnTintColor;
+        self.onImage = nil;
+        self.offImage = nil;
 	}
 
 	return self;
+}
+
+- (id)initWithOnImage:(UIImage *)anOnImage offImage:(UIImage *)anOffImage onTintColor:(UIColor *)anOnTintColor
+{
+    if ((self = [super init]))
+    {
+        self.onImage = anOnImage;
+        self.offImage = anOffImage;
+        self.onTintColor = anOnTintColor;
+    }
+    
+    return self;
 }
 
 - (UIFont *)labelFont
@@ -79,23 +95,35 @@
 	CGFloat textSpaceWidth = (self.bounds.size.width / 2) - (knobRadius / 2);
 
 	UIGraphicsPushContext(context);
+//withOffset:drawPercent * (boundsRect.size.width - knobWidth)
+//inTrackWidth:(boundsRect.size.width - knobWidth)];
 
-	// 'ON' state label (self.onString)
-	CGSize onTextSize = [self.onString sizeWithFont:self.labelFont];
-	CGPoint onTextPoint = CGPointMake((textSpaceWidth - onTextSize.width) / 2.0 + knobRadius * .15, floorf((self.bounds.size.height - onTextSize.height) / 2.0) + 1.0);
-	[[UIColor colorWithWhite:0.45 alpha:1.0] set]; // .2 & .4
-	[self.onString drawAtPoint:CGPointMake(onTextPoint.x, onTextPoint.y - 1.0) withFont:self.labelFont];
-	[[UIColor whiteColor] set];
-	[self.onString drawAtPoint:onTextPoint withFont:self.labelFont];
+    if (self.onImage) {
+        CGPoint onImagePoint = CGPointMake((textSpaceWidth - self.onImage.size.width) / 2.0 + knobRadius * .15, floorf((self.bounds.size.height - self.onImage.size.height) / 2.0) + 1.0);
+        [self.onImage drawAtPoint:onImagePoint];
+    } else {
+        // 'ON' state label (self.onString)
+        CGSize onTextSize = [self.onString sizeWithFont:self.labelFont];
+        CGPoint onTextPoint = CGPointMake((textSpaceWidth - onTextSize.width) / 2.0 + knobRadius * .15, floorf((self.bounds.size.height - onTextSize.height) / 2.0) + 1.0);
+        [[UIColor colorWithWhite:0.45 alpha:1.0] set]; // .2 & .4
+        [self.onString drawAtPoint:CGPointMake(onTextPoint.x, onTextPoint.y - 1.0) withFont:self.labelFont];
+        [[UIColor whiteColor] set];
+        [self.onString drawAtPoint:onTextPoint withFont:self.labelFont];
+    }
 
-	// 'OFF' state label (self.offString)
-	CGSize offTextSize = [self.offString sizeWithFont:self.labelFont];
-	CGPoint offTextPoint = CGPointMake(textSpaceWidth + (textSpaceWidth - offTextSize.width) / 2.0 + knobRadius * .86, floorf((self.bounds.size.height - offTextSize.height) / 2.0) + 1.0);
-	[[UIColor whiteColor] set];
-	[self.offString drawAtPoint:CGPointMake(offTextPoint.x, offTextPoint.y + 1.0) withFont:self.labelFont];
-	[[UIColor colorWithWhite:0.52 alpha:1.0] set];
-	[self.offString drawAtPoint:offTextPoint withFont:self.labelFont];
-
+    if (self.offImage) {
+        CGPoint offImagePoint = CGPointMake(textSpaceWidth + (textSpaceWidth - self.onImage.size.width) / 2.0 + knobRadius * .86, floorf((self.bounds.size.height - self.onImage.size.height) / 2.0) + 1.0);			
+        [offImage drawAtPoint:offImagePoint];			
+    } else {
+        // 'OFF' state label (self.offString)
+        CGSize offTextSize = [self.offString sizeWithFont:self.labelFont];
+        CGPoint offTextPoint = CGPointMake(textSpaceWidth + (textSpaceWidth - offTextSize.width) / 2.0 + knobRadius * .86, floorf((self.bounds.size.height - offTextSize.height) / 2.0) + 1.0);
+        [[UIColor whiteColor] set];
+        [self.offString drawAtPoint:CGPointMake(offTextPoint.x, offTextPoint.y + 1.0) withFont:self.labelFont];
+        [[UIColor colorWithWhite:0.52 alpha:1.0] set];
+        [self.offString drawAtPoint:offTextPoint withFont:self.labelFont];
+    }
+    
 	UIGraphicsPopContext();
 }
 

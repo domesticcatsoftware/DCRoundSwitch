@@ -20,8 +20,10 @@
 
 @property (nonatomic, retain) UIColor *onTintColor;		// default: blue (matches normal UISwitch)
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
-@property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
-@property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized
+@property (nonatomic, copy) NSString *onText;			// default: 'ON' - not automatically localized!
+@property (nonatomic, copy) NSString *offText;			// default: 'OFF' - not automatically localized!
+@property (nonatomic, copy) UIImage *onImage;
+@property (nonatomic, copy) UIImage *offImage;
 
 + (Class)knobLayerClass;
 + (Class)outlineLayerClass;
