@@ -163,6 +163,11 @@
 	[self positionLayersAndMask];
 }
 
+- (void)sendActions
+{
+	[self sendActionsForControlEvents:UIControlEventValueChanged];
+}
+
 #pragma mark -
 #pragma mark Setup Frame/Layout
 
@@ -396,8 +401,9 @@
 			self.ignoreTap = NO;
 
 			// send the action here so it get's sent at the end of the animations
-			if (previousOn != on && !ignoreControlEvents)
-				[self sendActionsForControlEvents:UIControlEventValueChanged];
+			if (previousOn != on && !ignoreControlEvents) {
+				[self performSelector:@selector(sendActions) withObject:nil afterDelay:0.2 inModes:[NSArray arrayWithObject:NSRunLoopCommonModes]];
+			}
 
 			[[self allTargets] makeObjectsPerformSelector:@selector(release)];
 		}];
