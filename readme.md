@@ -24,6 +24,7 @@ If you you it in your project, we'd love to hear about it: [contact@domesticcat.
 Extra features
 --------------
 * onTintColor
+* offTintColor
 * onText
 * offText
 * resize the frame to whatever you want to make fatter/skinnier controls
