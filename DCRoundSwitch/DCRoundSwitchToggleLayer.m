@@ -12,8 +12,9 @@
 #import "DCRoundSwitchToggleLayer.h"
 
 @implementation DCRoundSwitchToggleLayer
-@synthesize onString, offString, onTintColor;
+@synthesize onString, offString, onTintColor, offTintColor;
 @synthesize drawOnTint;
+@synthesize drawOffTint;
 @synthesize clip;
 @synthesize labelFont;
 
@@ -22,17 +23,19 @@
 	[onString release];
 	[offString release];
 	[onTintColor release];
+    	[offTintColor release];
 
 	[super dealloc];
 }
 
-- (id)initWithOnString:(NSString *)anOnString offString:(NSString *)anOffString onTintColor:(UIColor *)anOnTintColor
+- (id)initWithOnString:(NSString *)anOnString offString:(NSString *)anOffString onTintColor:(UIColor *)anOnTintColor offTintColor:(UIColor *)anOffTintColor
 {
 	if ((self = [super init]))
 	{
 		self.onString = anOnString;
 		self.offString = anOffString;
 		self.onTintColor = anOnTintColor;
+        	self.offTintColor = anOffTintColor;
 	}
 
 	return self;
@@ -63,10 +66,13 @@
 		CGContextFillRect(context, CGRectMake(0, 0, knobCenter, self.bounds.size.height));
 	}
 
-	// off tint color (white)
-	CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.963 alpha:1.0].CGColor);
-	CGContextFillRect(context, CGRectMake(knobCenter, 0, self.bounds.size.width - knobCenter, self.bounds.size.height));
 
+    // off tint color
+    if (self.drawOffTint) {
+        CGContextSetFillColorWithColor(context, self.offTintColor.CGColor);
+        CGContextFillRect(context, CGRectMake(knobCenter, 0, self.bounds.size.width - knobCenter, self.bounds.size.height));
+    }
+    
 	// knob shadow
 	CGContextSetShadowWithColor(context, CGSizeMake(0, 0), 1.5, [UIColor colorWithWhite:0.2 alpha:1.0].CGColor);
 	CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:0.42 alpha:1.0].CGColor);

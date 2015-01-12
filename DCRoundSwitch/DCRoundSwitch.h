@@ -19,6 +19,7 @@
 @interface DCRoundSwitch : UIControl
 
 @property (nonatomic, retain) UIColor *onTintColor;		// default: blue (matches normal UISwitch)
+@property (nonatomic, retain) UIColor *offTintColor;           // default: gray (matches normal UISwitch)
 @property (nonatomic, getter=isOn) BOOL on;				// default: NO
 @property (nonatomic, copy) NSString *onText;			// default: 'ON' - automatically localized
 @property (nonatomic, copy) NSString *offText;			// default: 'OFF' - automatically localized

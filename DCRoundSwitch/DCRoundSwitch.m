@@ -32,7 +32,7 @@
 @implementation DCRoundSwitch
 @synthesize outlineLayer, toggleLayer, knobLayer, clipLayer, ignoreTap;
 @synthesize on, onText, offText;
-@synthesize onTintColor;
+@synthesize onTintColor, offTintColor;
 
 #pragma mark -
 #pragma mark Init & Memory Managment
@@ -45,6 +45,7 @@
 	[clipLayer release];
 
 	[onTintColor release];
+    	[offTintColor release];
 	[onText release];
 	[offText release];
 
@@ -129,8 +130,9 @@
 	// this is the knob, and sits on top of the layer stack. note that the knob shadow is NOT drawn here, it is drawn on the
 	// toggleLayer so it doesn't bleed out over the outlineLayer.
 
-	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0]] autorelease];
+	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0] offTintColor:[UIColor colorWithRed:0.960 green:0.960 blue:0.960 alpha:1.0]] autorelease];
 	self.toggleLayer.drawOnTint = NO;
+    	self.toggleLayer.drawOffTint = NO;
 	self.toggleLayer.clip = YES;
 	[self.layer addSublayer:self.toggleLayer];
 	[self.toggleLayer setNeedsDisplay];
@@ -197,6 +199,7 @@
 	// turn of the manual clipping (done in toggleLayer's drawInContext:)
 	self.toggleLayer.clip = NO;
 	self.toggleLayer.drawOnTint = YES;
+    	self.toggleLayer.drawOffTint = YES;
 	[self.toggleLayer setNeedsDisplay];
 
 	// create the layer mask and add that to the toggleLayer
@@ -413,6 +416,17 @@
 		[onTintColor release];
 		onTintColor = [anOnTintColor retain];
 		self.toggleLayer.onTintColor = anOnTintColor;
+		[self.toggleLayer setNeedsDisplay];
+	}
+}
+
+- (void)setOffTintColor:(UIColor *)anOffTintColor
+{
+	if (anOffTintColor != offTintColor)
+	{
+		[offTintColor release];
+		offTintColor = [anOffTintColor retain];
+		self.toggleLayer.offTintColor = anOffTintColor;
 		[self.toggleLayer setNeedsDisplay];
 	}
 }

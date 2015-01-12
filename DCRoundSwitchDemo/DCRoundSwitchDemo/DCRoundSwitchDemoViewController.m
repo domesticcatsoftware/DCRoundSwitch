@@ -44,6 +44,7 @@
 	[self.switch1 addTarget:self action:@selector(switch1Toggled:) forControlEvents:UIControlEventValueChanged];
 
 	self.switch2.onTintColor = [UIColor redColor];
+	self.switch2.offTintColor = [UIColor purpleColor];
 	self.switch2.on = YES;
 
 	self.switch3.onTintColor = [UIColor blackColor];
