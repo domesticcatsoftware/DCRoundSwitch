@@ -130,7 +130,7 @@
 	// this is the knob, and sits on top of the layer stack. note that the knob shadow is NOT drawn here, it is drawn on the
 	// toggleLayer so it doesn't bleed out over the outlineLayer.
 
-	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0] offTintColor:[UIColor colorWithRed:0.555 green:0.555 blue:0.555 alpha:1.0]] autorelease];
+	self.toggleLayer = [[[[[self class] toggleLayerClass] alloc] initWithOnString:self.onText offString:self.offText onTintColor:[UIColor colorWithRed:0.000 green:0.478 blue:0.882 alpha:1.0] offTintColor:[UIColor colorWithRed:0.960 green:0.960 blue:0.960 alpha:1.0]] autorelease];
 	self.toggleLayer.drawOnTint = NO;
     	self.toggleLayer.drawOffTint = NO;
 	self.toggleLayer.clip = YES;
