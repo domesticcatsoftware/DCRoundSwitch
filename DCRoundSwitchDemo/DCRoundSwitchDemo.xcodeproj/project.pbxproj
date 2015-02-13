@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D592E4D1A8E86A600F3399B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D592E4C1A8E86A600F3399B /* Default-568h@2x.png */; };
 		AB6FE5D313C420A3006BCDBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D213C420A3006BCDBB /* UIKit.framework */; };
 		AB6FE5D513C420A3006BCDBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D413C420A3006BCDBB /* Foundation.framework */; };
 		AB6FE5D713C420A3006BCDBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6FE5D613C420A3006BCDBB /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D592E4C1A8E86A600F3399B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AB6FE5CE13C420A3006BCDBB /* DCRoundSwitchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCRoundSwitchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6FE5D213C420A3006BCDBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB6FE5D413C420A3006BCDBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,6 +76,7 @@
 		AB6FE5C313C420A3006BCDBB = {
 			isa = PBXGroup;
 			children = (
+				3D592E4C1A8E86A600F3399B /* Default-568h@2x.png */,
 				AB6FE5D813C420A3006BCDBB /* DCRoundSwitchDemo */,
 				AB6FE5D113C420A3006BCDBB /* Frameworks */,
 				AB6FE5CF13C420A3006BCDBB /* Products */,
@@ -171,7 +174,7 @@
 		AB6FE5C513C420A3006BCDBB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = AB6FE5C813C420A3006BCDBB /* Build configuration list for PBXProject "DCRoundSwitchDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA7A60B613FEA495000F7F8D /* MainWindow.xib in Resources */,
+				3D592E4D1A8E86A600F3399B /* Default-568h@2x.png in Resources */,
 				DA7A60B813FEA4A2000F7F8D /* DCRoundSwitchDemoViewController.xib in Resources */,
 				DA7A60BC13FEA655000F7F8D /* Localizable.strings in Resources */,
 			);
@@ -239,7 +243,6 @@
 		AB6FE5ED13C420A3006BCDBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -249,6 +252,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -256,7 +260,6 @@
 		AB6FE5EE13C420A3006BCDBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
