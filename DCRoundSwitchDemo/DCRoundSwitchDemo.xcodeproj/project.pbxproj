@@ -281,6 +281,8 @@
 				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
@@ -296,6 +298,7 @@
 				GCC_PREFIX_HEADER = "DCRoundSwitchDemo/DCRoundSwitchDemo-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "DCRoundSwitchDemo/DCRoundSwitchDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				VALIDATE_PRODUCT = YES;
