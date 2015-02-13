@@ -173,9 +173,9 @@
 	NSString *onString = self.toggleLayer.onString;
 	NSString *offString = self.toggleLayer.offString;
 
-	CGFloat width = [onString sizeWithFont:self.toggleLayer.labelFont].width;
-	CGFloat offWidth = [offString sizeWithFont:self.toggleLayer.labelFont].width;
-	
+    CGFloat width = [onString sizeWithAttributes:@{NSFontAttributeName: self.toggleLayer.labelFont}].width;
+    CGFloat offWidth = [offString sizeWithAttributes:@{NSFontAttributeName: self.toggleLayer.labelFont}].width;
+    
 	if(offWidth > width)
 		width = offWidth;
 	
